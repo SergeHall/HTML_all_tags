@@ -1,0 +1,2868 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Мои первые шаги в WEB">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <!-- Если атрибут http-equiv используется, то атрибут
+     name не должен устанавливаться в мета-теге.-->
+    <!--    <meta  http-equiv  = "refresh" content = "5,-->
+    <!--        URL='https://www.sergioartg.com'" >-->
+    <!-- мета элемент, который указывает, что страница будет перезагружена
+    через 5 секунд и перейдет по указанному URL -->
+    <meta name="author" content="Serge">
+    <style>
+        h1 {
+            color: dodgerblue;
+            border-width: thin;
+            border-style: dashed;
+            text-align: center
+        }
+
+        h2 {
+            color: rosybrown;
+            border-width: thick;
+            border-style: double;
+            text-align: center
+        }
+        h3 {
+            color: black;
+        }
+        h4 {
+            color: rosybrown;
+            text-align: center
+        }
+        h5 {
+            color:green;
+            text-align: center
+        }
+
+        a:active {
+            background: cornsilk;
+            color: red;
+        }
+
+        kbd {
+            border-radius: 2px;
+            padding: 3px;
+            border: 1px solid black;
+            color: blue
+        }
+
+        aside {
+            width: 40%;
+            padding-left: 15px;
+            margin-left: 15px;
+            float: right;
+            font-style: italic;
+            background-color: lightgray;
+        }
+
+        blockquote {
+            display: block;
+            margin-top: 1em;
+            margin-bottom: 1em;
+            margin-left: 40px;
+            margin-right: 40px;
+        }
+
+        .button {
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+
+        .button1 {
+            background-color: #4CAF50;
+        }
+
+        /* Зеленый */
+        .button2 {
+            background-color: #008CBA;
+        }
+
+        /* Синий */
+
+        table, th, td {
+            border: 1px solid black;
+        }
+
+        cite {
+            font-style: italic;
+        }
+
+        code {
+            font-family: Consolas, serif;
+            color: crimson;
+            background-color: #f1f1f1;
+            padding: 2px;
+            font-size: 105%;
+        }
+
+        dd {
+            display: block;
+            margin-left: 60px;
+        }
+
+        del {
+            text-decoration: line-through;
+        }
+
+        ins {
+            background-color: yellow;
+        }
+
+        details > summary {
+            padding: 4px;
+            width: 200px;
+            background-color: #eeeeee;
+            border: none;
+            box-shadow: 1px 1px 2px #bbbbbb;
+            cursor: pointer;
+        }
+
+        details > p {
+            background-color: #eeeeee;
+            padding: 4px;
+            margin: 0;
+            box-shadow: 1px 1px 2px #bbbbbb;
+        }
+        .myDiv {
+            border: 5px outset red;
+            background-color: lightblue;
+            text-align: center;
+        }
+        dl {
+            display: block;
+            margin-top: 1em;
+            margin-bottom: 1em;
+            margin-left: 0;
+            margin-right: 0;
+        }
+        dt {
+            display: block;
+        }
+        em {
+            font-style: italic;
+        }
+        figure {
+            border: 1px #cccccc solid;
+            padding: 4px;
+            margin: auto;
+        }
+        figcaption {
+            background-color: black;
+            color: white;
+            font-style: italic;
+            padding: 2px;
+            text-align: center;
+        }
+        .all-browsers {
+            margin: 0;
+            padding: 5px;
+            background-color: lightgray;
+        }
+        .all-browsers > h1, .browser {
+            margin: 10px;
+            padding: 5px;
+        }
+        .browser {
+            background: white;
+        }
+        .browser > h2, p {
+            margin: 4px;
+            font-size: 90%;
+        }
+        footer {
+            text-align: center;
+            padding: 3px;
+            background-color: DarkSalmon;
+            color: white;
+        }
+        i {
+            font-style: italic;
+        }
+        fieldset {
+            background-color: #eeeeee;
+        }
+
+        legend {
+            background-color: gray;
+            color: white;
+            padding: 5px 10px;
+        }
+
+        input {
+            margin: 5px;
+        }
+        p {
+            color: grey;
+            text-indent: 30px;
+        }
+        main {
+            margin: 0;
+            padding: 5px;
+            background-color: lightgray;
+        }
+
+        main > h1, p, .browser {
+            margin: 10px;
+            padding: 5px;
+        }
+
+        .browser {
+            background: white;
+        }
+
+        .browser > h2, p {
+            margin: 4px;
+            font-size: 90%;
+        }
+        mark {
+            background-color: yellow;
+            color: black;
+        }
+        ol.a {list-style-type: armenian;}
+        ol.b {list-style-type: cjk-ideographic;}
+        ol.c {list-style-type: decimal;}
+        ol.d {list-style-type: decimal-leading-zero;}
+        ol.e {list-style-type: georgian;}
+        ol.f {list-style-type: hebrew;}
+        ol.g {list-style-type: hiragana;}
+        ol.h {list-style-type: hiragana-iroha;}
+        ol.i {list-style-type: katakana;}
+        ol.j {list-style-type: katakana-iroha;}
+        ol.k {list-style-type: lower-alpha;}
+        ol.l {list-style-type: lower-greek;}
+        ol.m {list-style-type: lower-latin;}
+        ol.n {list-style-type: lower-roman;}
+        ol.o {list-style-type: upper-alpha;}
+        ol.p {list-style-type: upper-latin;}
+        ol.q {list-style-type: upper-roman;}
+        ol.r {list-style-type: none;}
+        ol.s {list-style-type: inherit;}
+
+        q {
+            color: blueviolet;
+            font-style: italic;
+        }
+
+        span.small {
+            font-size: smaller;
+        }
+        details > summary {
+            padding: 4px;
+            width: 200px;
+            background-color: #eeeeee;
+            border: none;
+            box-shadow: 1px 1px 2px #bbbbbb;
+            cursor: pointer;
+        }
+
+        details > p {
+            background-color: #eeeeee;
+            padding: 4px;
+            margin: 0;
+            box-shadow: 1px 1px 2px #bbbbbb;
+        }
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 5px;
+        }
+        table.center {
+            margin-left: auto;
+            margin-right: auto;
+        }
+        thead {color:green;}
+        tbody {color:blue;}
+        tfoot {color:red;}
+
+        .myClass {
+            color: white;
+            background-color: DodgerBlue;
+            padding: 20px;
+            text-align: center;
+            margin: 10px;
+        }
+        .spelling-error {
+            text-decoration-line: underline;
+            text-decoration-style: wavy;
+            text-decoration-color: red;
+        }
+        var {
+            color: red;
+            font-style: italic;
+        }
+
+    </style>
+    <title></title>
+
+
+</head>
+<body>
+    <br>
+    <h1>My first page</h1>
+    <h1>Абзац первый tags h1</h1>
+    <h2>Абзац второй tags h2</h2>
+    <h3>Абзац третий tags h3</h3>
+    <h4>Абзац четвертый tags h4</h4>
+    <h5>Абзац пятый tags h5</h5>
+
+    <h1>Тег abbr</h1>
+    <p>Тег abbr определяет аббревиатуру или акроним, например "HTML", "CSS", "Mr.",
+        "Dr.", "ASAP", "ATM".
+        Совет: Используйте глобальный атрибут title для отображения описания
+        аббревиатуры/акронима при наведении курсора мыши на элемент.</p>
+    <p><abbr title="Всемирная Организация
+        Здравоохранения">ВОЗ</abbr> был основан в 1948.</p>
+
+    <h1>Тег address</h1>
+    <address>
+        <p>Тег address определяет контактную информацию для автора/владельца
+            документа или статьи. Контактная информация может быть адресом
+            электронной почты, URL адресом, физическим адресом, номером
+            телефона, ручкой социальных сетей и т.д.</p>
+        Автор: <a href="mailto:sergioartg@gmail.com.com">Щипунов Андрей
+        Леонидович</a>.
+        <br>
+        Посетите нас в:<br>
+        Example.com<br>
+        Пермь<br>
+        Россия
+    </address>
+
+    <h1>Тег area. Карта с кликабильными областями</h1>
+
+    <p>Нажмите на компьютер, телефон или чашку кофе, чтобы перейти
+        на новую страницу и прочитать больше о теме:</p>
+
+    <img src="pictures/workplace.jpg" alt="Рабочее место" usemap="#workmap"
+         width="400" height="379">
+
+    <map name="workmap">
+        <area shape="rect" coords="34,44,270,350" alt="Компьютер"
+              href="https://en.wikipedia.org/wiki/Computer">
+        <area shape="rect" coords="290,172,333,250" alt="Телефон"
+              href="https://en.wikipedia.org/wiki/Mobile_phone">
+        <area shape="circle" coords="337,300,44" alt="Чашка кофе"
+              href="https://en.wikipedia.org/wiki/Coffee">
+    </map>
+
+    <h1>Тег article</h1>
+    <p>Тег article определяет независимое, автономное содержимое.
+        Статья должна иметь смысл сама по себе, и ее можно распространять независимо
+        от остальной части сайта.
+        Потенциальные источники для элемента article:
+        - Forum post
+        - Blog post
+        - News story</p>
+
+    <article>
+        <h3>Google Chrome</h3>
+        <p>Google Chrome - это веб-браузер, разработанный компанией Google и
+            выпущенный в 2008 году. Chrome - это самый популярный веб браузер в мире
+            на сегодняшний день!</p>
+    </article>
+
+    <article>
+        <h3>Mozilla Firefox</h3>
+        <p>Mozilla Firefox - это веб-браузер с открытым исходным кодом,
+            разработанный компанией Mozilla. Firefox стал вторым по популярности веб
+            браузером с января 2018 года.</p>
+    </article>
+
+    <article>
+        <h3>Microsoft Edge</h3>
+        <p>Microsoft Edge - это веб браузер, разработанный компанией Microsoft и
+            выпущенный в 2015 году. Microsoft Edge заменил Internet Explorer.</p>
+    </article>
+
+    <h1>Тег aside с CSS</h1>
+
+    <p>Этим летом мы с семьей посетили Центр Epcot. Погода была хорошая, и Epcot был
+        восхитителен! Я отлично провел лето вместе со своей семьей!</p>
+
+    <aside>
+        <p>Epcot - это тематический парк на курорте Walt Disney World Resort с
+            захватывающими достопримечательностями, международные павильоны,
+            отмеченные наградами фейерверки и сезонные специальные мероприятия.</p>
+    </aside>
+
+    <p>Этим летом мы с семьей посетили Центр Epcot. Погода была хорошая, и Epcot был
+        восхитителен! Я отлично провел лето вместе со своей семьей!</p>
+    <p>Этим летом мы с семьей посетили Центр Epcot. Погода была хорошая, и Epcot был
+        восхитителен! Я отлично провел лето вместе со своей семьей!</p>
+
+    <h1>Тег audio</h1>
+
+    <p>Нажмите на кнопку воспроизведения, чтобы воспроизвести звук:</p>
+
+    <audio controls>
+        <source src="music/Better_Memories.mp3" type="audio/mpeg">
+        Ваш браузер не поддерживает элемент audio.
+    </audio>
+
+    <h1>Тег b</h1>
+
+    <p>Тег b указывает жирный текст без какой-либо дополнительной важности.</p>
+    <p>Это обычный текст - <b>а это жирный текст</b>.</p>
+
+    <h1>Тег base</h1>
+
+    <p>Тег base задает базовый URL и/или целевой объект для всех относительных URL в
+        документе.
+        Тег base должен иметь либо href, либо целевой атрибут, либо и то, и
+        другое.<br>
+        Может быть только один единственный элемент base в документе, и он должен
+        быть внутри элемента head.</p>
+
+    <p><img src="gifs/Rotating_earth_(large).gif" width="400" height="400"
+            alt="Rotating_earth">
+
+    <p><a href="https://www.w3schools.com/tags/tag_base.asp">HTML Тег base</a> -
+        Обратите внимание, что ссылка открывается в новом окне, даже если у нее нет
+        атрибута target="_blank".
+        Это происходит потому, что атрибут target элемента base имеет значение
+        "_blank".</p>
+
+    <h1>Тег bdi</h1>
+    <p>BDI означает двунаправленную изоляцию.<br>
+        Тег bdi изолирует часть текста, которая может быть отформатирована в другом
+        направлении, чем другой текст за его пределами.
+        Этот элемент полезен при внедрении пользовательского контента с неизвестным
+        направлением текста.</p>
+
+    <p>В приведенном ниже примере, имена пользователей отображаются вместе с
+        количеством баллов в конкурсе.
+        Если элемент bdi не поддерживается в браузере, имя пользователя арабского
+        пользователя будет путать текст
+        (двунаправленный алгоритм поставит двоеточие и число "90" рядом
+        к слову "Пользователь", а не рядом со словом "точки").</p>
+
+    <ul>
+        <li>Пользователь
+            <bdi>hrefs</bdi>
+            : 60 точек
+        </li>
+        <li>Пользователь
+            <bdi>jdoe</bdi>
+            : 80 точек
+        </li>
+        <li>Пользователь
+            <bdi>إيان</bdi>
+            : 90 точек
+        </li>
+    </ul>
+
+    <h1>Тег bdo</h1>
+    <p>BDO расшифровывается как двунаправленное переопределение.
+        Тег bdo используется для переопределения текущего направления текста.</p>
+
+    <p>Этот текст пойдет слева направо.</p>
+    <p><bdo dir="rtl">Текст будет справа налево.</bdo></p>
+
+    <h1>Тег blockquote с CSS</h1>
+    <p>Тег blockquote указывает раздел, который цитируется из другого
+        источника.<br>
+        Браузеры обычно используют отступ от элементов blockquote (посмотрите
+        на пример ниже, чтобы увидеть, как удалить отступ).<br>
+        Совет: Воспользуйся tag q для встроенных (коротких) цитат.</p>
+
+    <p>Используйте CSS, чтобы удалить отступ из элемента blockquote.</p>
+
+    <p>Вот цитата с сайта ВОЗ:</p>
+
+    <blockquote cite="http://www.worldwildlife.org/who/index.html">
+        За 50 лет, Всемирный Фонд Дикой Природы защищатет будущее природы. Ведущая в
+        мире природоохранная организация,<br>
+        ВОЗ работает в 100 странах и поддерживается 1,2 миллионов членов в
+        Соединенных Штатах и около 5 миллионов во всем мире.
+    </blockquote>
+
+    <h1>Тег button с CSS</h1>
+
+    <p>Измените цвет фона кнопки с помощью свойства background-color:</p>
+
+    <button class="button button1">Зеленый</button>
+    <button class="button button2">Синий</button>
+
+    <h1>Тег canvas с JavaScript</h1>
+    <p>Тег canvas используется для рисования графики, на лету, с помощью
+        сценариев (обычно JavaScript). Тег canvas прозрачен и является только
+        контейнером для графики, вы должны использовать скрипт, чтобы
+        фактически нарисовать графику. Любой текст внутри элемента canvas
+        будет отображаться в браузерах с отключенным JavaScript и в
+        браузерах, которые не поддерживают canvas.</p>
+
+    <canvas id="myCanvas">
+        Ваш браузер не поддерживает тег canvas.
+    </canvas>
+
+    <script>
+        var c = document.getElementById("myCanvas");
+        var ctx = c.getContext("2d");
+        ctx.fillStyle = "red";
+        ctx.fillRect(20, 20, 75, 50);
+
+        // Включите прозрачность
+        ctx.globalAlpha = 0.2;
+        ctx.fillStyle = "blue";
+        ctx.fillRect(50, 50, 75, 50);
+        ctx.fillStyle = "green";
+        ctx.fillRect(80, 80, 75, 50);
+    </script>
+
+    <h1>Тег caption выравнивание с CSS</h1>
+    <p>Tег caption определяет подпись таблицы.
+        Тег caption должен быть вставлен сразу же после тега table.<br>
+        Совет: По умолчанию заголовок таблицы выравнивается по центру над таблицей.
+        Однако свойства CSS text-align и caption-side можно использовать для
+        выравнивания и размещения подписи.
+
+    <table>
+        <caption style="text-align:right">Мои сбережения</caption>
+        <tr>
+            <th>Месяц</th>
+            <th>Сбережения</th>
+        </tr>
+        <tr>
+            <td>Январь</td>
+            <td>$100</td>
+        </tr>
+    </table>
+    <br>
+
+    <table>
+        <caption style="caption-side:bottom">Мои сбережения</caption>
+        <tr>
+            <th>Месяц</th>
+            <th>Сбережения</th>
+        </tr>
+        <tr>
+            <td>Январь</td>
+            <td>$100</td>
+        </tr>
+    </table>
+
+
+    <h1>Тег cite по умолчанию с CSS</h1>
+    <p>Tег cite определяет название произведения (например, книги, песни, фильма,
+        сериала, картины, скульптуры и т. д.).
+        Примечание: Имя человека не является названием произведения.
+        Текст в элементе cite обычно отображается italic.</p>
+
+    <p>Элемент cite отображается следующим образом:</p>
+
+    <img src="pictures/img_the_scream.jpg" width="220" height="277" alt="The Scream">
+    <p><cite>Крик</cite> Эдвард Манч. Написал в 1893 году.</p>
+
+    <p>Измените настройки CSS по умолчанию, чтобы увидеть эффект.</p>
+
+    <h1>Тег code с CSS</h1>
+    <p>Тег code используется для определения фрагмента компьютерного кода.
+        Содержимое внутри отображается в моноширинном шрифте браузера по
+        умолчанию.<br>
+        Совет: Этот тег не является устаревшим. Однако можно добиться более богатого
+        эффекта с помощью CSS (см. пример ниже).</p>
+
+    <p>HTML тег <code>button</code> определяет кликабельную кнопку.</p>
+    <p>CSS свойство <code>background-color</code> определяет цвет фона элемента.</p>
+
+    <h1>Выравнивание без col с CSS</h1>
+    <p>Тег col задает свойства столбца для каждого столбца в элементе colgroup.
+        Тег col полезен для применения стилей ко всем столбцам, вместо того чтобы
+        повторять стили для каждой ячейки, для каждой строки.</p>
+
+    <table style="width:100%">
+        <tr>
+            <th>ISBN</th>
+            <th>Заголовок</th>
+            <th>Прайс</th>
+        </tr>
+        <tr>
+            <td>3476896</td>
+            <td>Мой первый HTML</td>
+            <td>$53</td>
+        </tr>
+        <tr>
+            <td>5869207</td>
+            <td>Мой первый CSS</td>
+            <td>$49</td>
+        </tr>
+    </table>
+
+    <h1>Teг colgroup</h1>
+    <p>
+        Тег colgroup задает группу из одного или нескольких столбцов в таблице для
+        форматирования.
+        Тег colgroup полезен для применения стилей ко всем столбцам, вместо того
+        чтобы повторять стили для каждой ячейки, для каждой строки.
+        Примечание: Тег colgroup должен быть ребенком элемента table,
+        после элемента caption и перед элементами thead, tbody,
+        tfoot, и tr.<br>
+        Совет: Чтобы определить различные свойства столбца в пределах colgroup,
+        используйте тег col в теге colgroup.
+    </p>
+    <h3>Выравнивание текста без colgroup с CSS</h3>
+
+    <table style="width:100%">
+        <tr>
+            <th>ISBN</th>
+            <th>Заголовок</th>
+            <th>Прайс</th>
+        </tr>
+        <tr>
+            <td>3476896</td>
+            <td>Мой первый HTML</td>
+            <td style="text-align:right">$53</td>
+        </tr>
+        <tr>
+            <td>2489604</td>
+            <td>Мой первый CSS</td>
+            <td style="text-align:right">$47</td>
+        </tr>
+    </table>
+
+    <h3>Выравнивание по вертикали без colgroup с CSS</h3>
+
+    <table style="height:200px">
+        <tr>
+            <th>Месяц</th>
+            <th style="vertical-align:bottom">Сбережения</th>
+        </tr>
+        <tr>
+            <td>Январь</td>
+            <td style="vertical-align:bottom">$100</td>
+        </tr>
+    </table>
+
+    <h3>Ширина без colgroup с CSS</h3>
+
+    <table>
+        <tr>
+            <th style="width:200px">Месяц</th>
+            <th>Сбережения</th>
+        </tr>
+        <tr>
+            <td>Январь</td>
+            <td>$100</td>
+        </tr>
+        <tr>
+            <td>Февраль</td>
+            <td>$80</td>
+        </tr>
+    </table>
+
+    <h1>Тег data</h1>
+    <p>Тег data используется для добавления машиночитаемого перевода заданного
+        контента.
+        Этот элемент предоставляет как машиночитаемое значение для процессоров
+        обработки данных,
+        так и человекочитаемое значение для визуализации в браузере.<br>
+        Совет: Если содержимое связано со временем или датой, используйте
+        элемент time.</p>
+
+    <p>В следующем примере отображаются названия продуктов, но также связывается
+        каждое имя с номером продукта:</p>
+
+    <ul>
+        <li>
+            <data value="22">Cherry Помидоры</data>
+        </li>
+        <li>
+            <data value="2">Beef Помидоры</data>
+        </li>
+        <li>
+            <data value="200">Snack Помидоры</data>
+        </li>
+    </ul>
+
+    <h1>Тег datalist</h1>
+    <p>Тег datalist задает список предопределенных параметров для элемента input.
+        Тег datalist используется для обеспечения функции "autocomplete" элементов
+        input. При вводе данных пользователи будут видеть раскрывающийся список
+        предопределенных параметров.
+        Тег datalist атрибут id элемента должен быть равен атрибуту списка элемента
+        input (это связывает их вместе).</p>
+
+    <form action="pictures/datalist_tag.png" method="get">
+        <label for="browser">Выберите свой браузер из списка:</label>
+        <input list="browsers" name="browser" id="browser">
+        <datalist id="browsers">
+            <option value="Edge">
+            <option value="Firefox">
+            <option value="Chrome">
+            <option value="Opera">
+            <option value="Safari">
+        </datalist>
+        <input type="submit">
+    </form>
+
+    <p><strong>Примечание:</strong> Тег datalist не поддерживается в Safari 12.0
+        (или более ранних версиях).</p>
+
+    <h1>Тег dd по умолчанию с CSS</h1>
+    <p>Тег dd используется для описания термина/имени в списке описаний.
+        Тег dd используется в сочетании с dl (определяет список описаний) и dt
+        (определяет термины/названия).
+        Внутри тега dd вы можете поместить параграф, разрывы строк, изображения,
+        ссылки, списки и т.д.</p>
+
+    <p>Элемент dd отображается следующим образом:</p>
+
+    <dl>
+        <dt>Кофе</dt>
+        <dd>Черный горячий напиток</dd>
+        <dt>Молоко</dt>
+        <dd>Белый холодный напиток</dd>
+    </dl>
+
+    <p>Измените настройки CSS по умолчанию, чтобы увидеть эффект.</p>
+
+    <h1>Тег del и ins с CSS</h1>
+    <p>Тег del определяет текст, который был удален из документа. Браузеры
+        обычно вычеркивают строку через удаленный текст.<br>
+        Совет: Также посмотрите на тег ins для разметки вставленного текста.</p>
+
+    <p>Мой любимый цвет
+        <del>blue</del>
+        <ins>красный</ins>
+        !
+    </p>
+
+    <h3>Тег del по умолчанию c CSS</h3>
+
+    <p>Элемент del отображается следующим образом:</p>
+
+    <p>
+        <del>Некоторые удаленные тексты.</del>
+    </p>
+
+    <p>Измените настройки CSS по умолчанию, чтобы увидеть эффект.</p>
+
+    <h1>Тег details и summary с CSS</h1>
+    <p>Тег details указывает дополнительные сведения, которые пользователь может
+        открывать и закрывать по требованию.
+        тег details часто используется для создания интерактивного виджета, который
+        пользователь может открывать и закрывать. По умолчанию виджет закрыт. Когда
+        он открыт, он расширяется и отображает содержимое внутри.
+        Любой вид контента может быть помещен внутрь тега details.<br>
+        Совет: Тег summary используется в сочетании с details для указания видимого
+        заголовка для деталей.</p>
+
+    <details>
+        <summary>Центр Эпкот</summary>
+        <p>Эпкот - это тематический парк на курорте Уолт Дисней с захватывающими
+            аттракционами, международными павильонами, отмеченными наградами
+            фейерверками и сезонными специальными мероприятиями.</p>
+    </details>
+
+    <p><b>Примечание:</b> Тег details не поддерживается в Edge (предыдущая версия
+        79).</p>
+
+    <h1>Тег dfn</h1>
+    <h3>Пример тега dfn</h3>
+
+    <p><dfn>HTML</dfn> стандартный язык разметки для создания веб страниц.</p>
+
+    <h3>Тег dfn без атрибута title</h3>
+
+    <p><dfn>HTML</dfn> стандартный язык разметки для создания веб страниц.</p>
+
+    <h3>Тег dfn с атрибутом title</h3>
+
+    <p><dfn title="Язык Гипертекстовой Разметки">HTML</dfn> стандартный язык
+        разметки для создания веб страниц.</p>
+
+    <h3>Тег abbr внутри dfn</h3>
+
+    <p><dfn><abbr title="Язык Гипертекстовой Разметки">HTML</abbr></dfn> стандартный
+        язык разметки для создания веб страниц.</p>
+
+    <h3>Тег dfn с атрибутом id</h3>
+
+    <p><dfn id="html-def">HTML</dfn> стандартный язык разметки для создания веб
+        страниц.</p>
+
+    <p>Это какой-то текст...</p>
+    <p>Это какой-то текст...</p>
+    <p>Это какой-то текст...</p>
+    <p>Это какой-то текст...</p>
+    <p>Это какой-то текст...</p>
+    <p>Это какой-то текст...</p>
+    <p>Это какой-то текст...</p>
+    <p>Это какой-то текст...</p>
+    <p>Это какой-то текст...</p>
+    <p>Это какой-то текст...</p>
+    <p>Это какой-то текст...</p>
+    <p>Это какой-то текст...</p>
+    <p>Это какой-то текст...</p>
+    <p>Это какой-то текст...</p>
+
+    <p>Выучить <a href="https://schoolsw3.com/tags/tag_dfn.php">HTML</a> сейчас.</p>
+
+    <h1>Тег dialog</h1>
+
+        <p>Это какой-то текст.</p>
+
+        <p>Это какой-то текст.</p>
+
+        <dialog open>Это открытое диалоговое окно</dialog>
+
+        <p>Это какой-то текст</p>
+
+        <p>Это какой-то текст.</p>
+
+        <p><b>Примечание:</b> диалоговый тег не поддерживается в Safari и Edge (предыдущая версия 79).</p>
+
+    <h1>Тег ul вместо dir с CSS</h1>
+
+    <ul style="line-height:90%">
+      <li>html</li>
+      <li>xhtml</li>
+      <li>css</li>
+    </ul>
+
+    <h1>Тег div</h1>
+        <p>Тег div определяет подразделение или раздел в HTML документе.
+            Тег div используется в качестве контейнера для HTML элементов,
+            которые затем стилизуются с помощью CSS или манипулируются с помощью JavaScript.
+            Тег div легко стилизуется с помощью атрибута class или id.
+            Любой вид контента может быть помещен внутрь тега div
+        </p>
+
+        <div class="myDiv">
+          <h2>Это заголовок в элементе div</h2>
+          <p>Это параграф в элементе div</p>
+        </div>
+
+        <p>Это некоторый текст вне элемента div.</p>
+
+    <h1>Тег dl по умолчанию с CSS</h1>
+        <p> Тег dl определяет список описаний.
+            Тег dl используется в сочетании с dt (определяет термины/названия) и dd
+            (описывает каждый термин/имя).
+        </p>
+
+        <p>Элемент dl отображается следующим образом:</p>
+
+            <dl>
+                <dt>Кофе</dt>
+                <dd>Черный горячий напиток</dd>
+                <dt>Молоко</dt>
+                <dd>Белый холодный напиток</dd>
+            </dl>
+
+        <p>Измените настройки CSS по умолчанию, чтобы увидеть эффект.</p>
+
+    <h1>Тег dt по умолчанию с CSS</h1>
+        <p>Тег dt определяет термин/имя в списке описаний.
+            Тег dt используется в сочетании с dl (определяет список описаний)
+            и dd (описывает каждый термин/имя).
+        </p>
+
+        <p>Элемент dt отображается следующим образом:</p>
+
+            <dl>
+                <dt>Кофе</dt>
+                <dd>Черный горячий напиток</dd>
+                <dt>Молоко</dt>
+                <dd>Белый холодный напиток</dd>
+            </dl>
+
+    <p>Измените настройки CSS по умолчанию, чтобы увидеть эффект.</p>
+
+    <h1>Тег em по умолчанию с CSS</h1>
+        <p>Тег em используется для определения подчеркнутого текста.
+            Содержимое внутри обычно отображается italic.
+            Программа чтения с экрана будет произносить слова в em,
+            используя словесное ударение.
+        </p>
+
+        <p>Элемент em отображается следующим образом:</p>
+
+            <em>Некоторые подчеркнутый текст</em>
+
+        <p>Измените настройки CSS по умолчанию, чтобы увидеть эффект.</p>
+
+    <h1>Тег fieldset</h1>
+        <p>Тег fieldset используется для группировки связанных элементов в форме.
+            Тег fieldset рисует прямоугольник вокруг связанных элементов.<br>
+            Совет: Тег legend используется для определения заголовка элемента fieldset.
+        </p>
+        <form action="all_tags.html">
+            <fieldset style="background-color: antiquewhite">
+                <legend style="background-color: ghostwhite">Personalia:</legend>
+                <label for="fname">Имя:</label>
+                <input type="text" id="fname" name="fname"><br><br>
+                <label for="lname">Фамилия:</label>
+                <input type="text" id="lname" name="lname"><br><br>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email"><br><br>
+                <label for="address">Adress:</label>
+                <input id="address" name="address"><br><br>
+                <label for="birthday">День рождение:</label>
+                <input type="date" id="birthday" name="birthday"><br><br>
+                <input type="submit" value="Submit">
+            </fieldset>
+        </form>
+
+    <h1>Тег figure и figcaption с CSS</h1>
+        <p>Тег figcaption определяет заголовок для элемента figure.
+            Тег figcaption может быть помещен как первый или последний
+            дочерний элемент figure.
+        </p>
+
+        <figure>
+            <img src="pictures/lady_white.jpg" alt="Трулли" style="width:100%">
+            <figcaption>Рис.1 - Kheops is a ready-to-wear brand by the
+                designer Victoria Cocieru.</figcaption>
+        </figure>
+
+    <h1>Тег article и footer с CSS</h1>
+        <p>Тег footer определяет нижний колонтитул для документа или раздела.<br>
+        Тег footer обычно содержит:<br>
+         - информацию авторство<br>
+         - авторские права<br>
+         - контактная информация<br>
+         - карта сайта<br>
+         - вернуться к верхним ссылкам<br>
+         - сопутствующие документы<br>
+        Вы можете иметь несколько элементов footer в одном документе.<br>
+
+        Совет: Контактная информация элемента footer должен быть внутри тега address.</p>
+
+    <article class="all-browsers">
+    <h2>Самые популярные браузеры</h2>
+    <article class="browser">
+        <h3>Google Chrome</h3>
+        <p>Google Chrome - веб браузер, разработанный компанией Google и выпущенный в 2008 году. Chrome-это самый популярный веб браузер в мире на сегодняшний день!</p>
+    </article>
+    <article class="browser">
+        <h3>Mozilla Firefox</h3>
+        <p>Mozilla Firefox - веб браузер с открытым исходным кодом, разработанный компанией Mozilla. Firefox стал вторым по популярности веб браузером с января 2018 года.</p>
+    </article>
+    <article class="browser">
+        <h3>Microsoft Edge</h3>
+        <p>Microsoft Edge - веб браузер, разработанный компанией Microsoft и выпущенный в 2015 году. Microsoft Edge заменил Internet Explorer.</p>
+    </article>
+    </article>
+
+    <footer>
+        <p>Автор: Serge</p>
+        <p><a href="mailto:serge.hoth@gmail.com">serge.hoth@gmail.com</a></p>
+    </footer>
+
+    <h1>Тег form</h1>
+    <p>Тег form используется для создания HTML формы для ввода
+        пользователем.<br>
+        Тег form может содержать один или несколько из следующих элементов формы:<br>
+    - input<br>
+    - textarea<br>
+    - button<br>
+    - select<br>
+    - option<br>
+    - optgroup<br>
+    - fieldset<br>
+    - label<br>
+    - output></p>
+    <h2>Тег form с отправкой</h2>
+            <form action="/action_page.php" method="get">
+            <label for="fname">Имя:</label>
+            <input type="text" name="fname"><br><br>
+            <label for="lname">Фамилия:</label>
+            <input type="text"  name="lname"><br><br>
+            <input type="submit" value="Submit">
+        </form>
+<!-- внизу оригинальный код-->
+<!--        <form action="/action_page.php" method="get">-->
+<!--            <label for="fname">Имя:</label>-->
+<!--            <input type="text" id="fname" name="fname"><br><br>-->
+<!--            <label for="lname">Фамилия:</label>-->
+<!--            <input type="text" id="lname" name="lname"><br><br>-->
+<!--            <input type="submit" value="Submit">-->
+<!--        </form>-->
+
+    <h2>Тег form атрибут с чек боксом</h2>
+
+        <form action="/action_page.php" method="get">
+            <input type="checkbox" name="vehicle1" value="Bike">
+            <label> У меня есть велосипед</label><br>
+            <input type="checkbox" name="vehicle2" value="Car">
+            <label> У меня есть машина</label><br>
+            <input type="checkbox" name="vehicle3" value="Boat" checked>
+            <label> У меня есть лодка</label><br><br>
+        <input type="submit" value="Submit">
+        </form>
+
+<!-- внизу оригинальный код-->
+<!--    <form action="/action_page.php" method="get">-->
+<!--        <input type="checkbox" name="vehicle1" value="Bike">-->
+<!--        <label for="vehicle1"> У меня есть велосипед</label><br>-->
+<!--        <input type="checkbox" name="vehicle2" value="Car">-->
+<!--        <label for="vehicle2"> У меня есть машина</label><br>-->
+<!--        <input type="checkbox" name="vehicle3" value="Boat" checked>-->
+<!--        <label for="vehicle3"> У меня есть лодка</label><br><br>-->
+<!--        <input type="submit" value="Submit">-->
+<!--    </form>-->
+
+    <h2>Тег form с радио кнопками</h2>
+
+    <form action="/action_page.php" method="get">
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="male">Мужской</label><br>
+        <input type="radio" id="female" name="gender" value="female" checked="checked">
+        <label for="female">Женский</label><br>
+        <input type="radio" id="other" name="gender" value="other">
+        <label for="other">Другое</label><br><br>
+        <input type="submit" value="Submit">
+    </form>
+
+    <p>Нажмите кнопку "Submit", и данные формы будут отправлены
+    на страницу на сервере под названием "action_page.php".</p>
+
+    <h1>Тег head</h1>
+        <p>Тег head элемент представляет собой контейнер для метаданных (данных о данных) и помещается между тегом html и тегом body.
+        Метаданные - это данные о документе HTML. Метаданные не отображаются.
+        Метаданные обычно определяют заголовок документа, набор символов, стили, сценарии и другую метаинформацию.
+        В элемент head входят следующие элементы:<br>
+        - title (требуется в каждом HTML документе)<br>
+        - style<br>
+        - base<br>
+        - link<br>
+        - meta<br>
+        - script<br>
+        - noscript</p>
+
+    <h1> Тег header</h1>
+        <p>Тег header представляет собой контейнер для вводного контента или набор навигационных ссылок.
+        Тег header обычно содержит:<br>
+        - один или несколько элементов заголовка (h1 - h6)<br>
+        - логотип или иконка<br>
+        - информация об авторстве<br>
+        Примечание: Вы можете иметь несколько элементов header в одном HTML документе. Однако, header не может быть помещен в footer, address или другой элемент header.</p>
+    <article>
+        <header>
+            <h3>Заголовок здесь</h3>
+            <p>Автор: Serge</p>
+            <p>Некоторая дополнительная информация здесь</p>
+        </header>
+        <p>Lorem Ipsum dolor set amet....</p>
+    </article>
+
+    <h1>Тег hr</h1>
+        <p>Тег hr определяет тематический разрыв в HTML странице (например,
+            смена темы). Тег hr чаще всего отображается в виде
+            горизонтального правила, которое используется для разделения
+            содержимого (или определения изменения) на HTML странице.
+        </p>
+
+        <h3>Основные языки Web</h3>
+
+        <p> HTML - стандартный язык разметки для создания веб страниц. HTML описывает структуру веб страницы и состоит из ряда элементов. HTML элементы сообщают браузеру, как отображать содержимое.</p>
+
+            <hr style="width:50%;text-align:left;margin-left:0">
+
+        <p>CSS - язык, который описывает, как HTML элементы должны отображаться на экране, бумаге или на других носителях. CSS экономит много работы, потому что он может управлять макетом нескольких веб страниц одновременно.</p>
+
+        <p>С CSS:</p>
+            <hr style="height:2px;border-width:0;color:gray;background-color:gray">
+
+        <p>JavaScript - это язык программирования HTML и Web. JavaScript может изменять содержимое HTML и значения атрибутов. JavaScript может изменить CSS. JavaScript может скрывать и показывать HTML элементы и многое другое.</p>
+            <p>Горизонтальная линия высотой 30 пикселей:</p>
+            <hr style="height:30px">
+
+    <h1>Тег html</h1>
+        <p>Тег html представляет собой корень HTML документа.
+            Тег html является контейнером для всех других HTML элементов
+            (за исключением тега !DOCTYPE). Примечание: Вы всегда должны
+            включать в себя атрибут lang внутри тега html, чтобы объявить
+            язык веб страницы. Это делается для того, чтобы помочь поисковым
+            системам и браузерам.
+        </p>
+
+    <h1>Пример тега i по умолчанию с CSS</h1>
+        <p>Тег i определяет часть текста в альтернативном голосе или
+            настроении. Содержимое внутри обычно отображается в виде курсива.
+            Тег i часто используется для обозначения технического термина,
+            фразы из другого языка, мысли, названия судна и т.д.
+            Используйте элемент i только тогда, когда нет более
+            подходящего семантического элемента, например:<br>
+        - em (подчеркнутый текст)<br>
+        - strong (важный текст)<br>
+        - mark (выделенный/выделенный текст)<br>
+        - cite (название произведения)<br>
+        - dfn (определение термина)</p>
+        <hr>
+        <p>Элемент i отображается следующим образом:</p>
+
+        <i>Немного курсивного текста</i>
+
+        <p>Измените настройки CSS по умолчанию, чтобы увидеть эффект.</p>
+
+    <h1>Тег iframe с границами с CSS</h1>
+        <p>Тег iframe указывает встроенный фрейм. Встроенный фрейм
+            используется для встраивания другого документа в текущий HTML
+            документ.<br>
+            Совет: Используйте CSS для стилизации iframe (см. пример ниже).<br>
+            Совет: Это хорошая практика, всегда включать атрибут заголовка для iframe.<br>
+            Используется программами чтения с экрана для считывания того, что содержит iframe.</p>
+
+        <p>Iframe с границами по умолчанию:</p>
+        <iframe src="pictures/img_banner.jpg" width="100%" height="300">
+        </iframe>
+
+        <p>Iframe с тонкой черной границей:</p>
+        <iframe src="pictures/img_banner.jpg" width="100%" height="300" style="border:1px solid black;">
+        </iframe>
+
+        <p>Iframe без границ:</p>
+        <iframe src="pictures/img_banner.jpg" width="100%" height="300" style="border:none;">
+        </iframe>
+
+    <h1>Тег img с выравниванием с CSS</h1>
+        <p>Тег img используется для встраивания изображения в HTML страницу.
+            Изображения технически не вставляются на веб страницу;
+            изображения связаны с веб страницами. Тег img создает
+            удерживающее пространство для ссылочного изображения.<br>
+            Тег img имеет два обязательных атрибута:<br>
+            - src - Указывает путь к изображению<br>
+            - alt - Задает альтернативный текст для изображения, если
+            изображение по какой-либо причине не может быть отображено<br>
+            Примечание: Кроме того, всегда указывайте ширину и высоту изображения. Если ширина и высота не указаны, страница может мерцать во время загрузки изображения.<br>
+            Совет: Чтобы связать изображение с другим документом, просто вложите тег img в тег a (см. пример ниже)</p>
+
+        <h3>Пример тега img с добавлением границ с CSS. vertical-align:
+            bottom.</h3>
+            <p>Это какой-то текст. <img src="pictures/smiley_GIF.gif"
+                                        alt="Смайлик" width="42" height="42"
+                                        style="border:5px solid black">
+                Это какой-то текст. Это какой-то текст. Это какой-то текст.
+            </p>
+
+        <h3>Пример тега img с добавлением полей с CSS. vertical-align:
+            middle</h3>
+            <p>Это какой-то текст. <img src="pictures/smiley_GIF.gif"
+                                        alt="Смайлик" width="42" height="42"
+                                        style="vertical-align:middle;margin:0 50px">
+                Это какой-то текст. Это какой-то текст. Это какой-то текст.
+            </p>
+
+        <h3>Пример тега img с верхним и нижним полями с CSS. vertical-align: top</h3>
+            <p>Это какой-то текст. <img src="pictures/smiley_GIF.gif" alt="Смайлик"
+                                        width="42" height="42" style="vertical-align:middle;margin:50px 0">
+                Это какой-то текст. Это какой-то текст. Это какой-то текст.
+            </p>
+
+        <h3>float: right</h3>
+            <p>Это какой-то текст. <img src="pictures/smiley_GIF.gif"
+                                        alt="Смайлик" width="42" height="42"
+                                        style="float:right">
+                Это какой-то текст. Это какой-то текст. Это какой-то текст.
+            </p>
+
+        <h3>float: left</h3>
+            <p>Это какой-то текст. <img src="pictures/smiley_GIF.gif"
+                                        alt="Смайлик" width="42" height="42"
+                                        style="float:left">
+                Это какой-то текст. Это какой-то текст. Это какой-то текст.
+            </p>
+        <br>
+        <h3>Вставка изображения из другой папки:</h3>
+            <img src="gifs/Rotating_earth_(large).gif" alt="Человечек" width="400" height="400">
+
+        <h3>Вставка изображения с сайта:</h3>
+            <img src="https://www.schoolsw3.com/images/lamp.jpg" alt="Лампа" width="32" height="32">
+
+    <h1>Тег input</h1>
+
+    <p>Тег input указывает поле ввода, в которое пользователь может вводить данные.
+        Тег input - это самый важный элемент формы. Элемент input может быть
+        отображен несколькими способами, в зависимости от типа атрибута.<br>
+        Различные типы входных данных следующие:<br>
+        - input type="button"<br>
+        - input type="checkbox"<br>
+        - input type="color"<br>
+        - input type="date"<br>
+        - input type="datetime-local"<br>
+        - input type="email"<br>
+        - input type="file"<br>
+        - input type="hidden"<br>
+        - input type="image"<br>
+        - input type="month"<br>
+        - input type="number"<br>
+        - input type="password"<br>
+        - input type="radio"<br>
+        - input type="range"<br>
+        - input type="reset"<br>
+        - input type="search"<br>
+        - input type="submit"<br>
+        - input type="tel"<br>
+        - input type="text" (значение по умолчанию)<br>
+        - input type="time"<br>
+        - input type="url"<br>
+        - input type="week"<br>
+        Посмотрите на атрибут type для просмотра примеров для каждого типа входных данных!<br><br>
+
+        Совет: Всегда используйте тег label определения меток для<br>
+                input type="text",<br>
+                input type="checkbox",<br>
+                input type="radio",<br>
+                input type="file",<br>
+                input type="password".
+    </p><br>
+
+        <form action="/action_page.php">
+            <label for="fname">Имя:</label>
+            <input type="text" name="fname"><br><br>
+            <label for="lname">Фамилия:</label>
+            <input type="text" name="lname"><br><br>
+            <input type="submit" value="Submit">
+        </form>
+
+<!-- внизу оригинальный код-->
+<!--        <form action="/action_page.php">-->
+<!--            <label for="fname">Имя:</label>-->
+<!--            <input type="text" id="fname" name="fname"><br><br>-->
+<!--            <label for="lname">Фамилия:</label>-->
+<!--            <input type="text" id="lname" name="lname"><br><br>-->
+<!--            <input type="submit" value="Submit">-->
+<!--        </form>-->
+        <p>Нажмите на кнопку "Submit" и форма данных будет отправлена на
+            страницу сервера под названием "action_page.php".
+        </p>
+
+    <h1>Тег del и ins с CSS</h1>
+        <p>Тег ins определяет текст, который был вставлен в документ.
+            Браузеры обычно подчеркивают вставленный текст.<br>
+            Совет: Также посмотрите на тег del для разметки удаленного текста.</p>
+
+        <p>Мой любимый цвет <del>blue</del> <ins>красный</ins>!</p>
+
+    <h1>Тег kbd с CSS</h1>
+        <p>Тег kbd используется для определения ввода с клавиатуры.
+            Содержимое внутри отображается в моноширинном шрифте браузера по
+            умолчанию.<br>
+            Совет: Тег не является устаревшим. Однако можно добиться более
+            богатого эффекта с помощью CSS (см. пример ниже).</p>
+
+        <p>Нажмите <kbd>Ctrl</kbd> + <kbd>C</kbd> для копирования текста (Windows).</p>
+
+        <p>Нажмите <kbd>Cmd</kbd> + <kbd>C</kbd> для копирование текста (Mac OS).</p>
+
+    <h1>Тег label</h1>
+        <p>Тег label определяет метку для нескольких элементов:<br>
+            - input type="checkbox"<br>
+            - input type="color"<br>
+            - input type="date"<br>
+            - input type="datetime-local"<br>
+            - input type="email"<br>
+            - input type="file"<br>
+            - input type="month"<br>
+            - input type="number"<br>
+            - input type="password"<br>
+            - input type="radio"<br>
+            - input type="range"<br>
+            - input type="search"<br>
+            - input type="tel"<br>
+            - input type="text"<br>
+            - input type="time"<br>
+            - input type="url"<br>
+            - input type="week"<br>
+            - meter<br>
+            - progress<br>
+            - select<br>
+            - textarea<br><br>
+            Правильное использование меток с вышеперечисленными элементами принесет пользу:<br>
+            - Пользователи программы чтения с экрана (будут читать вслух
+            надпись, Когда пользователь сосредоточен на элементе)<br>
+            - Пользователи, которым трудно нажимать на очень маленькие области
+            (например, флажки) - потому что, когда пользователь нажимает на
+            текст внутри элемента label , он переключает ввод (это увеличивает область попадания).<br>
+            Совет: Атрибут label должен быть равен атрибуту id связанного элемента, чтобы связать их вместе. label также может быть привязана к элементу, поместив его внутри элемента label.
+        </p><br>
+        <p>Нажмите на одну из текстовых меток, чтобы переключить соответствующий переключатель:</p>
+
+        <form action="/action_page.php">
+            <label for="male">Мужской</label>
+            <input type="radio" name="gender" value="male"><br>
+            <label for="female">Женский</label>
+            <input type="radio" name="gender" value="female"><br>
+            <label for="other">другое</label>
+            <input type="radio" name="gender" value="other"><br><br>
+            <input type="submit" value="Submit">
+        </form>
+
+<!--        <form action="/action_page.php">-->
+<!--            <label for="male">Мужской</label>-->
+<!--            <input type="radio" name="gender" id="male" value="male"><br>-->
+<!--            <label for="female">Женский</label>-->
+<!--            <input type="radio" name="gender" id="female" value="female"><br>-->
+<!--            <label for="other">другое</label>-->
+<!--            <input type="radio" name="gender" id="other" value="other"><br><br>-->
+<!--            <input type="submit" value="Submit">-->
+<!--        </form>-->
+
+    <h1>Тег legend с CSS</h1>
+        <p>Тег legend определяет заголовок для элемента fieldset.</p>
+        <form action="/action_page.php">
+            <fieldset>
+                <legend>Персона:</legend>
+                <label for="fname">Имя:</label>
+                <input type="text" name="fname"><br><br>
+                <label for="lname">Фамилия:</label>
+                <input type="text" name="lname"><br><br>
+                <label for="email">Email:</label>
+                <input type="email" name="email"><br><br>
+                <label for="birthday">День рождение:</label>
+                <input type="date" name="birthday"><br><br>
+                <input type="submit" value="Submit">
+            </fieldset>
+        </form>
+
+<!--        <form action="/action_page.php">-->
+<!--            <fieldset>-->
+<!--                <legend>Персона:</legend>-->
+<!--                <label for="fname">Имя:</label>-->
+<!--                <input type="text" id="fname" name="fname"><br><br>-->
+<!--                <label for="lname">Фамилия:</label>-->
+<!--                <input type="text" id="lname" name="lname"><br><br>-->
+<!--                <label for="email">Email:</label>-->
+<!--                <input type="email" id="email" name="email"><br><br>-->
+<!--                <label for="birthday">День рождение:</label>-->
+<!--                <input type="date" id="birthday" name="birthday"><br><br>-->
+<!--                <input type="submit" value="Submit">-->
+<!--            </fieldset>-->
+<!--        </form>-->
+
+    <h1>Тег li с CSS</h1>
+        <p>Тег li определяет элемент списка. Тег li используется внутри
+            упорядоченных списков(ol), неупорядоченных списков (ul), и в
+            списках меню (menu). В элементах ul и menu, списки обычно
+            отображаются с маркированными точками. В элементах ol, списки
+            обычно отображаются цифрами или буквами.<br>
+            Совет: Используйте CSS Списки стилей.
+        </p>
+
+        <h3>Использование атрибута li value в упорядоченном списке:</h3>
+        <ol>
+            <li value="100">Кофе</li>
+            <li>Чай</li>
+            <li>Молоко</li>
+            <li>Вода</li>
+            <li>Сок</li>
+            <li>Пиво</li>
+        </ol>
+
+        <h3>Выделяют разные типы стилей (с помощью CSS)</h3>
+        <ol>
+            <li>Кофе</li>
+            <li style="list-style-type:lower-alpha">Чай</li>
+            <li>Молоко</li>
+        </ol>
+
+        <ul>
+            <li>Кофе</li>
+            <li style="list-style-type:square">Чай</li>
+            <li>Молоко</li>
+        </ul>
+
+        <h3>Список внутри другого списка</h3>
+
+            <ul>
+                <li>Кофе</li>
+                <li>Чай
+                    <ul>
+                        <li>Черный чай</li>
+                        <li>Зеленый</li>
+                    </ul>
+                </li>
+                <li>Молоко</li>
+            </ul>
+
+    <h1>Тег link</h1>
+
+        <p>Тег link определяет связь между текущим документом и внешним
+            ресурсом.<br>
+            Тег link чаще всего используется для ссылки на внешние таблицы
+            стилей.<br>
+            Элемент link пустой, он содержит только атрибуты.
+        </p>
+
+        <h3>Я отформатирован с помощью связанной таблицы стилей</h3>
+        <p>Я тоже!</p>
+
+<h1>Тег main с CSS</h1>
+    <p>Тег main определяет основное содержимое документа. Содержание внутри
+        элемента main должен быть уникальным для документа. Он не должен содержать
+        никакого контента, который повторяется в документах, таких как боковая панель,
+        навигационные ссылки, информация об авторских правах, логотипы сайтов
+        и поисковые формы. <br>
+        Примечание: Их не должно быть больше одного элемента main в документе.
+        Элемент main элемент не должен быть потомком какого-либо элемента article, aside, footer, header, или nav.
+    </p>
+
+    <main>
+        <h2>Самые популярные браузеры</h2>
+        <p>Chrome, Firefox и Edge сегодня являются наиболее часто используемыми браузерами.</p>
+        <article class="browser">
+            <h3>Google Chrome</h3>
+            <p>Google Chrome - браузер, разработанный компанией Google и выпущенный в 2008 году. Chrome - самый популярный браузер в мире на сегодняшний день!</p>
+        </article>
+        <article class="browser">
+            <h3>Mozilla Firefox</h3>
+            <p>Mozilla Firefox - браузер с открытым исходным кодом, разработанный компанией Mozilla. Firefox стал вторым по популярности браузером с января 2018 года.</p>
+        </article>
+        <article class="browser">
+            <h3>Microsoft Edge</h3>
+            <p>Microsoft Edge - браузер, разработанный компанией Microsoft и выпущенный в 2015 году. Microsoft Edge заменил Internet Explorer.</p>
+        </article>
+    </main>
+
+    <h1>Тег map и area</h1>
+        <p>Тег map используется для определения карты изображений. Карта изображений - это изображение с кликабельными областями.
+            Атрибут name обязателен для элемента map, связан с атрибутом usemap и создает связь между img и картой.
+            Элемент map содержит ряд элементов, определяющих кликабельные области area на карте изображений.
+        </p>
+
+        <p>Нажмите на солнце или на одну из планет, чтобы посмотреть на нее поближе:</p>
+
+        <img src="pictures/Solar_System_size_to_scale_ru_1000px.png"
+                height="554" width="1000"  alt="Планеты" usemap="#planetmap"/>
+
+    <map name="planetmap">
+        <area shape="rect" coords="0,0,110,554"
+              href="https://en.wikipedia.org/wiki/Sun" alt="Солнце">
+        <area shape="circle" coords="183,221,8"
+              href="https://en.wikipedia.org/wiki/Mercury_(planet)"
+              alt="Mercury">
+        <area shape="circle" coords="219,221,8"
+              href="https://en.wikipedia.org/wiki/Venus" alt="Venus">
+        <area shape="circle" coords="268,221,10"
+              href="https://en.wikipedia.org/wiki/Earth" alt="Earth">
+        <area shape="circle" coords="313,221,8"
+              href="https://en.wikipedia.org/wiki/Mars" alt="Mars">
+        <area shape="circle" coords="398,221,55"
+              href="https://en.wikipedia.org/wiki/Jupiter" alt="Jupiter">
+        <area shape="circle" coords="549,221,48"
+              href="https://en.wikipedia.org/wiki/Saturn" alt="Saturn">
+        <area shape="circle" coords="644,221,23"
+              href="https://en.wikipedia.org/wiki/Uranus" alt="Uranus">
+        <area shape="circle" coords="707,221,23"
+              href="https://en.wikipedia.org/wiki/Neptune" alt="Neptune">
+        <area shape="circle" coords="332,347,8"
+              href="https://en.wikipedia.org/wiki/Neptune" alt="Neptune">
+        <area shape="rect" coords="618,335,810,391"
+              href="https://en.wikipedia.org/wiki/Solar_System" alt="Solar System">
+        </map>
+
+    <h1>Тег mark по умолчанию с CSS</h1>
+        <p>Тег mark определяет текст, который должен быть отмечен или выделен.</p>
+
+        <p>Элемент mark отображается следующим образом:</p>
+
+        <mark>Выделенный текст!</mark>
+        <p>Не забудьте купить <mark>молоко</mark> сегодня.</p>
+
+        <p>Измените настройки CSS по умолчанию, чтобы увидеть эффект.</p>
+
+    <h1>Тег meta</h1>
+    <p>Тег meta определяет метаданные о документе HTML. Метаданные - это данные
+        (информация) о данных. Теги meta всегда находятся внутри элемента head,
+        и обычно используются для указания набора символов, описания страницы,
+        ключевые слова, автор документа и настройки видового экрана.
+        Метаданные не будут отображаться на странице, но могут быть
+        проанализированы машиной. Метаданные используются браузерами
+        (как отобразить содержимое или перезагрузить страницу), поисковые
+        системы (ключевые слова) и другие веб сервисы. Существует метод,
+        позволяющий веб дизайнерам взять под свой контроль видовое окно
+        (видимую область веб страницы пользователя), через тег meta</p>
+
+    <h1>Тег meter</h1>
+        <p>Тег meter определяет скалярное измерение в пределах известного
+            диапазона или дробное значение. Это также известно как датчик.<br>
+            Примеры: использование диска, релевантность результата запроса и т.д.<br>
+            Примечание: Тег meter не должен использоваться для обозначения progress
+            (как в индикаторе progress). Для индикаторов выполнения используйте тег progress.<br>
+            Совет: Всегда добавляйте тег label для лучших практик доступности!
+        </p>
+
+        <p>Элемент meter используется для отображения датчика:</p>
+
+        <label for="disk_c">Использование диска C:</label>
+        <meter id="disk_c" value="2" min="0" max="10">от 2 до 10</meter><br>
+
+        <label for="disk_d">Использование диска D:</label>
+        <meter id="disk_d" value="0.6">60%</meter>
+
+        <p><strong>Примечание:</strong> Метка счетчика не поддерживается в Edge 12 (или более ранних версиях).</p>
+
+    <h1>Тег nav</h1>
+        <p>Тег nav определяет набор навигационных ссылок.
+            Обратите внимание, что не все ссылки документа должны находиться внутри элмента nav. Тег nav предназначен только для основного блока навигационных ссылок.
+            Браузеры, такие как программы чтения с экрана для пользователей с ограниченными возможностями, можно использовать этот элемент, чтобы определить, следует ли пропустить начальный рендеринг этого содержимого.
+        </p>
+
+        <p>Элемент nav определяет набор навигационных ссылок:</p>
+
+        <nav>
+            <a href="https://schoolsw3.com/html/index.php">HTML</a> |
+            <a href="https://schoolsw3.com/css/index.php">CSS</a> |
+            <a href="https://www.javascript.com">JavaScript</a> |
+            <a href="https://www.python.org">Python</a>
+        </nav>
+
+    <h1>Тег noscript</h1>
+        <p>Тег noscript определяет альтернативный контент, который будет отображаться пользователям, отключившим скрипты в своем браузере или имеющим браузер, не поддерживающий скрипты.
+            Тег noscript может быть использован в обоих случаях head и body. При использовании внутри тега head, элемент noscript может быть установлен, так же, как и элементы link, style, и meta.
+        </p>
+        <p>Браузер с отключенным JavaScript покажет текст внутри элемента noscript ("Привет Мир!" не будет отображаться).</p>
+
+        <script>
+            document.write("Привет Мир!")
+        </script>
+        <noscript>Ваш браузер не поддерживает JavaScript!</noscript>
+
+    <h1>Тег object</h1>
+    <p>Тег object определяет контейнер для внешнего ресурса.
+        Внешним ресурсом может быть веб страница, картинка, медиаплеер или подключаемое приложение.
+        Чтобы встроить картинку, лучше использовать тег img.
+        Для встраивания HTML лучше использовать тег iframe.
+        Для встраивания видео или аудио лучше использовать теги video и audio.
+    </p>
+
+    <object data="pictures/beach.jpg" width="300" height="200"></object><br>
+    <object data="https://www.sergioartg.com/" width="500"
+            height="300"></object><br>
+    <object data="gifs/Rotating_earth_(large).gif" width="500"
+            height="400"></object>
+
+    <h1>Тег ol с CSS</h1>
+        <p>Тег ol определяет упорядоченный список. Упорядоченный список может
+             быть числовым или алфавитным. Тег li используется для определения
+            каждого элемента списка. <br>
+            Совет: Используйте CSS для стилей списков.<br>
+            Совет: Для неупорядоченного списка используйте тег ul.</p>
+
+        <ol style="list-style-type:upper-roman">
+            <li>Кофе</li>
+            <li>Чай</li>
+            <li>Молоко</li>
+        </ol>
+
+        <ol style="list-style-type:lower-alpha">
+            <li>Кофе</li>
+            <li>Чай</li>
+            <li>Молоко</li>
+        </ol>
+
+    <h3>Все различные типы списков для ol с CSS</h3>
+
+        <ol class="a">
+          <li>Армянский type</li>
+          <li>Чай</li>
+          <li>Coca Cola</li>
+        </ol>
+
+        <ol class="b">
+          <li>Дальневосточные-идеографического type</li>
+          <li>Чай</li>
+          <li>Coca Cola</li>
+        </ol>
+
+        <ol class="c">
+          <li>Десятичный type</li>
+          <li>Чай</li>
+          <li>Coca Cola</li>
+        </ol>
+
+        <ol class="d">
+          <li>Десятичный с ноля type</li>
+          <li>Чай</li>
+          <li>Coca Cola</li>
+        </ol>
+
+        <ol class="e">
+          <li>Грузинский type</li>
+          <li>Чай</li>
+          <li>Coca Cola</li>
+        </ol>
+
+        <ol class="f">
+          <li>Еврейский type</li>
+          <li>Чай</li>
+          <li>Coca Cola</li>
+        </ol>
+
+        <ol class="g">
+          <li>Хирагана type</li>
+          <li>Чай</li>
+          <li>Coca Cola</li>
+        </ol>
+
+        <ol class="h">
+          <li>Хирагана-Ироха type</li>
+          <li>Чай</li>
+          <li>Coca Cola</li>
+        </ol>
+
+        <ol class="i">
+          <li>Катакана type</li>
+          <li>Чай</li>
+          <li>Coca Cola</li>
+        </ol>
+
+        <ol class="j">
+          <li>Катакана-Ироха type</li>
+          <li>Чай</li>
+          <li>Coca Cola</li>
+        </ol>
+
+        <ol class="k">
+          <li>Нижний-Альфа type</li>
+          <li>Чай</li>
+          <li>Coca Cola</li>
+        </ol>
+
+        <ol class="l">
+          <li>Нижний-Греческий type</li>
+          <li>Чай</li>
+          <li>Coca Cola</li>
+        </ol>
+
+        <ol class="m">
+          <li>Нижний-Латинский type</li>
+          <li>Чай</li>
+          <li>Coca Cola</li>
+        </ol>
+
+        <ol class="n">
+          <li>Нижний-Римский type</li>
+          <li>Чай</li>
+          <li>Coca Cola</li>
+        </ol>
+
+        <ol class="o">
+          <li>Верхний-Альфа type</li>
+          <li>Чай</li>
+          <li>Coca Cola</li>
+        </ol>
+
+        <ol class="p">
+          <li>Верхний-Латинский type</li>
+          <li>Чай</li>
+          <li>Coca Cola</li>
+        </ol>
+
+        <ol class="q">
+          <li>Верхний-Римский type</li>
+          <li>Чай</li>
+          <li>Coca Cola</li>
+        </ol>
+
+        <ol class="r">
+          <li>Нет type</li>
+          <li>Чай</li>
+          <li>Coca Cola</li>
+        </ol>
+
+        <ol class="s">
+          <li>наследовать type</li>
+          <li>Чай</li>
+          <li>Coca Cola</li>
+        </ol>
+
+    <h3>Изменение высоты строк списков с CSS</h3>
+
+        <p>Уменьшите высоту линии с помощью CSS:</p>
+            <ol style="line-height:80%">
+            <li>Кофе</li>
+            <li>Чай</li>
+            <li>Молоко</li>
+        </ol>
+
+        <p>Разверните высоту линии с помощью CSS:</p>
+            <ol style="line-height:180%">
+            <li>Кофе</li>
+            <li>Чай</li>
+            <li>Молоко</li>
+        </ol>
+
+    <h3>Неупорядоченный список внутри упорядоченного списка</h3>
+
+    <ol>
+      <li>Кофе</li>
+      <li>Чай
+        <ul>
+          <li>Черный чай</li>
+          <li>Зеленый чай</li>
+        </ul>
+      </li>
+      <li>Молоко</li>
+    </ol>
+
+    <h1>Тег optgroup</h1>
+        <p>Тег optgroup используется для группировки связанных параметров в элементе select (раскрывающийся список).
+            Если у вас есть длинный список опций, группы связанных опций проще обрабатывать для пользователя.
+        </p>
+
+        <label for="cars">Выберите автомобиль:</label>
+        <select  name="cars" id="cars">
+            <optgroup label="Шведские Автомобили">
+                <option value="volvo">Вольво</option>
+                <option value="saab">Сааб</option>
+            </optgroup>
+            <optgroup label="Немецкие Автомобили">
+                <option value="mercedes">Мерседес</option>
+                <option value="audi">Ауди</option>
+            </optgroup>
+        </select>
+
+    <h1>Тег option</h1>
+        <p>Тег option определяет параметр в списке выбора.
+            Элемент option находятся внутри элемнтов select, optgroup, или
+            datalist.<br>
+            Примечание: Тег option можно использовать без каких-либо атрибутов,
+            но обычно нужен атрибут value, который указывает, что отправляется на сервер при отправке формы.<br>
+            Совет: Если у вас есть длинный список опций, вы можете сгруппировать связанные опции в пределах тега optgroup.
+        </p>
+        <h3>Использование элемента option в datalist</h3>
+        <form action="/action_page.php" method="get">
+            <label for="browser">Выберите свой браузер из списка:
+        </label>
+            <input list="browsers" name="browser">
+            <datalist>
+                <option value="Edge">
+                <option value="Firefox">
+                <option value="Chrome">
+                <option value="Opera">
+                <option value="Safari">
+            </datalist>
+            <input type="submit">
+        </form>
+        <p><strong>Примечание:</strong> Тег datalist не поддерживается в Safari 12.0 (или более ранних версиях).</p>
+
+<!--       <form action="/action_page.php" method="get">-->
+<!--            <label for="browser">Выберите свой браузер из списка:-->
+<!--        </label>-->
+<!--            <input list="browsers" name="browser" id="browser">-->
+<!--            <datalist id="browsers">-->
+<!--                <option value="Edge">-->
+<!--                <option value="Firefox">-->
+<!--                <option value="Chrome">-->
+<!--                <option value="Opera">-->
+<!--                <option value="Safari">-->
+<!--            </datalist>-->
+<!--            <input type="submit">-->
+<!--        </form>-->
+<!--        <p><strong>Примечание:</strong> Тег datalist не поддерживается в Safari 12.0 (или более ранних версиях).</p>-->
+
+    <h3>Использование элемента option в optgroup:</h3>
+
+    <label for="cars">Выберите автомобиль:</label>
+    <select  name="cars">
+      <optgroup label="Шведские Автомобили">
+        <option value="volvo">Вольво</option>
+        <option value="saab">Сааб</option>
+      </optgroup>
+      <optgroup label="Немецкие Автомобили">
+        <option value="mercedes">Мерседес</option>
+        <option value="audi">Ауди</option>
+      </optgroup>
+    </select>
+
+<!--    <label for="cars">Выберите автомобиль:</label>-->
+<!--    <select  name="cars" id="cars">-->
+<!--      <optgroup label="Шведские Автомобили">-->
+<!--        <option value="volvo">Вольво</option>-->
+<!--        <option value="saab">Сааб</option>-->
+<!--      </optgroup>-->
+<!--      <optgroup label="Немецкие Автомобили">-->
+<!--        <option value="mercedes">Мерседес</option>-->
+<!--        <option value="audi">Ауди</option>-->
+<!--      </optgroup>-->
+<!--    </select>-->
+
+    <h1>Тег output</h1>
+        <p>Тег output используется для представления результата вычисления (например, выполняемого скриптом).</p>
+
+        <form oninput="x.value=parseInt(a.value)+parseInt(b.value)">0
+            <label for="a"></label><input type="range" id="a" value="50">100
+            +<label for="b"></label><input type="number" id="b" value="50">
+            =<output name="x" for="a b"></output>
+        </form>
+
+    <p><strong>Примечание:</strong> Элемент output не поддерживается в Edge 12 или Internet Explorer и более ранних версиях.</p>
+
+    <h1>Тег p с CSS</h1>
+        <p>Тег p определяет параграф. Браузеры автоматически добавляют одну
+            пустую строку до и после элемента p.<br>
+            Совет: Используйте CSS для стиля прараграфа.
+        </p>
+        <h3>Тег p cтиль параграфа с помощью CSS</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+        <h3>Тег p дополнительно</h3>
+
+            <p>
+            Настоящий пункт
+            содержит много строк
+            в исходном коде,
+            но браузер
+            игнорировать его.
+            </p>
+
+            <p>
+            Настоящий пункт
+            содержит много      пробелов
+            в исходном        коде,
+            но        браузер
+            игнорировать             его.
+            </p>
+
+            <p>
+            Количество строк в параграфе, зависит от размера окна браузера. Если вы измените размер окна браузера, количество строк в этом параграфе изменится.
+            </p>
+        <h3>Тег p проблема стихотворения</h3>
+
+            <p>
+            Моя Бонни лежит за океаном.
+            Моя Бонни лежит над морем.
+            Моя Бонни лежит над океаном.
+            O, вернись ко мне мою Бонни.
+            </p>
+
+            <p>Обратите внимание, что браузер просто игнорирует разрывы строк в исходном коде!</p>
+
+    <h1>Тег param</h1>
+        <p>Тег param используется для определения параметров для элемента object.</p>
+
+        <p><b>Примечание:</b> Internet ExBetter_Memories.mp3", чтобы проверить пример в этих версиях IE.</p>
+
+        <object data="music/Better_Memories.mp3">
+        <param name="autoplay" value="true">
+        </object>
+
+    <h1>Тег picture</h1>
+        <p>Тег picture дает веб разработчикам большую гибкость в определении ресурсов изображений.
+            Наиболее распространенным использованием элемента picture будет художественное направление в адаптивном дизайне. Вместо того чтобы иметь одно изображение, масштабируемое вверх или вниз в зависимости от ширины окна просмотра, можно создать несколько изображений, чтобы более красиво заполнить окно просмотра браузера.
+            Тег picture содержит два тега: один или несколько тегов source и один тег img.
+            браузер будет искать во первых элемент source, где медиа запрос
+            соответствует текущей ширине видового экрана, и тогда он
+            отобразит правильное изображение (указанное в атрибуте srcset).
+            Элемент img требуется в качестве последнего дочернего элемента
+            picture, в качестве запасного варианта, если ни один из исходных тегов не совпадает.<br>
+            Совет: Тег picture работает "подобно" в video и audio. Вы настраиваете разные источники, и первый источник, который соответствует вашим предпочтениям - это тот, который используется.
+        </p>
+
+        <picture>
+            <source media="(min-width: 1000px)"
+                    srcset="pictures/flowers_pink.jpg">
+            <source media="(min-width: 765px)"
+                    srcset="pictures/flowers_irodori_field.png">
+            <img src="pictures/flowers_marguerite.jpg" alt="Цветы" style="width:auto;">
+        </picture>
+
+        <p>Измените размер браузера, чтобы увидеть различные версии загрузки изображения с различными размерами окна просмотра.
+        Браузер ищет первый исходный элемент, в котором запрос мультимедиа соответствует текущей ширине окна просмотра пользователя,
+        и выбирает изображение, указанное в атрибуте srcset.</p>
+
+        <p>Элемент img требуется в качестве последнего дочернего тега блока объявления изображения.
+        Элемент img используется для обеспечения обратной совместимости браузеров, не поддерживающих элемент picture, или если ни один из исходных тегов не совпадает.
+        </p>
+
+        <p><strong>Примечание:</strong> Элемент picture не поддерживается в IE12 и раньше или Safari 9.0 и ранее.</p>
+
+    <h1>Тег pre стандарт</h1>
+        <p>Тег pre определяет предварительно отформатированный текст.
+            Текст в элементе pre отображается шрифтом фиксированной ширины, также текст сохраняет как пробелы, так и разрывы строк. Текст будет отображаться точно так, как написано в исходном коде HTML.</p>
+        <h3>Тег pre</h3>
+            <pre>
+            Текст в элементе pre
+            отображается шрифтом фиксированной ширины
+            , и он сохраняет
+            , как      пробелы так и
+            разрывы строк
+            </pre>
+            <pre>Это стандартн pre. Он будет использовать столько места, сколько ему нужно.</pre>
+
+        <h3>Фиксированная ширина pre</h3>
+            <div style="width:200px;overflow:auto">
+            <pre>Это pre с фиксированной шириной. Он будет использовать столько места, сколько указано.</pre>
+            </div>
+
+    <h1>Тег progress</h1>
+        <p>Тег progress представляет собой индикатор выполнения задачи.<br>
+            Совет: Всегда добавляйте тег label для лучших практик доступности!<br>
+            Совет: Используйте тег progress в сочетании с JavaScript для отображения индикатора выполнения задачи.<br>
+            Примечание: Тег progress не подходит для представления датчика (например, использование дискового пространства или релевантность результата запроса). Чтобы представить датчик, используйте тег meter.
+        </p><br>
+        <label for="file">Скачивание индикатор:</label>
+        <progress id="file" value="68" max="100"> 68% </progress>
+
+        <p><strong>Примечание:</strong> Тег progress не поддерживается в Internet Explorer 9 и более ранних версиях.</p>
+
+    <h1>Тег q с CSS</h1>
+        <p>Тег q тег определяет короткую цитату.
+            Браузеры обычно вставляют кавычки вокруг цитаты.<br>
+            Совет: Используйте тег blockquote для длинных цитат.
+        </p>
+
+        <p>Цель ВОЗ состоит в том, чтобы:
+        <q>Построить будущее, в котором люди будут жить в гармонии с природой.</q>
+        Мы надеемся, что они преуспеют.</p>
+
+    <h1>Тег rp</h1>
+        <p>Тег rp может быть использован для создания в круглых скобках вокруг текста ruby, которые будут отображаться браузерами, не поддерживающими аннотации ruby.
+            Используйте тег rp вместе с ruby и rt: Элемент ruby состоит из одного или нескольких символов, которые нуждаются в объяснении/произношении элемент rt, определяет информацию, и необязательный элемент rp, определяет, что показывать для браузеров, не поддерживающих аннотации ruby.
+        </p>
+        <ruby><br>
+            漢 <rt><rp>(</rp>ㄏㄢˋ<rp>)</rp></rt><br>
+        </ruby>
+
+    <h1>Тег rt</h1>
+        <p>Тег rt определяет объяснение или произношение символов (для восточноазиатской типографии) в аннотации ruby.
+            Используйте тег rt вместе с ruby и rp: Элемент ruby состоит из одного или нескольких символов, которые нуждаются в объяснении/произношении элемент rt,
+            определяет информацию, и необязательный элемент rp, определяет, что показывать для браузеров, не поддерживающих аннотации ruby.
+        </p>
+        <ruby>
+         漢 <rt> ㄏㄢˋ </rt>
+        </ruby>
+
+    <h1>Тег ruby</h1>
+        <p>Тег ruby указывает аннотацию ruby.
+            Рубиновая аннотация - это небольшой дополнительный текст, прикрепленный к основному тексту, чтобы указать произношение или значение соответствующих символов. Такого рода аннотации часто используются в японских публикациях.
+            Используйте тег ruby вместе с rt и rp: Элемент ruby состоит из одного или нескольких символов, которые нуждаются в объяснении/произношении элемент rt, определяет информацию, и необязательный элемент rp, определяет, что показывать для браузеров, не поддерживающих аннотации ruby.
+        </p>
+
+        <ruby>
+        漢 <rt> ㄏㄢˋ </rt>
+        </ruby>
+
+    <h1>HTML Тег s</h1>
+        <p>Тег s указывает текст, который больше не является правильным, точным или релевантным. Текст будет отображаться со строкой сквозь него.
+            Тег s не должен использоваться для определения удаленного текста в
+            документе, для этого используйется тег del.</p>
+
+        <p><s>Осталось всего 50 билетов!</s></p>
+        <p>ВСЕ РАСПРОДАНО!</p>
+
+    <h1>Тег samp</h1>
+        <p>Тег samp используется для определения образца вывода из компьютерной программы. Содержимое внутри отображается моноширинным шрифтом браузера по умолчанию.
+            Совет: Этот тег не является устаревшим. Однако можно добиться более богатого эффекта с помощью CSS.
+        </p>
+        <p>Сообщение с моего компьютера:</p>
+
+        <p><samp>Файл не найден.<br>Нажмите клавишу F1, чтобы продолжить</samp></p>
+
+    <h1>Тег script</h1>
+        <p>Тег script используется для встраивания клиентского скрипта (JavaScript).
+            Тег script либо содержит операторы скрипта, либо указывает на внешний файл скрипта через атрибут src.
+            Обычно JavaScript используется для манипулирования изображениями,
+            проверки формы и динамических изменений содержимого.<br>
+            Примечание: Существует несколько способов выполнения внешнего скрипта:<br>
+            Если async="async": Скрипт выполняется асинхронно с остальной частью страницы
+            (скрипт будет выполняться, пока страница продолжает разбор) Если асинхронности нет и defer="defer":
+            Скрипт выполняется после завершения синтаксического анализа
+            страницы.<br>
+            Если нет async или defer присутствует: Скрипт извлекается и выполняется немедленно,
+            прежде чем браузер продолжит разбор страницы.<br>
+            Совет: Также посмотрите на элемент noscript для пользователей, которые отключили скрипты
+            в своем браузере или имеют браузер, и не поддерживает клиентские сценарии.<br>
+            Совет: Если вы хотите узнать больше о JavaScript, посетите сайт JavaScript Учебник.</p>
+
+        <p id="demo"></p>
+
+        <script>
+        document.getElementById("demo").innerHTML = "Привет JavaScript!";
+        </script>
+
+    <h1>Тег section</h1>
+        <p>Тег section определяет раздел в документе.</p>
+
+        <section>
+        <h3>История WWF</h3>
+        <p>Всемирный фонд природы (WWF) это международная организация, занимающаяся вопросами сохранения, исследования и восстановления окружающей среды, ранее называвшаяся Всемирным фондом дикой природы. WWF был основан в 1961 году.</p>
+        </section>
+
+        <section>
+        <h3>Символы WWF</h3>
+        <p>Панда стала символом Всемирного фонда дикой природы. Известный логотип WWF в виде панды произошел от панды по имени Чи-Чи, которая была переведена из пекинского зоопарка в лондонский зоопарк в том же году, когда был создан WWF.</p>
+        </section>
+
+
+        <p><strong>Примечание:</strong> Тег раздел не поддерживается в Internet Explorer 8 и более ранние версии.</p>
+
+
+    <h1>Тег select</h1>
+        <h3>Создайте раскрывающийся список с четырьмя вариантами:</h3>
+
+        <p>Элемент select используется для создания раскрывающегося списка.</p>
+
+        <form action="/action_page.php">
+          <label for="cars">Выберите автомобиль:</label>
+          <select name="cars">
+            <option value="volvo">Вольво</option>
+            <option value="saab">Сааб</option>
+            <option value="opel">Опель</option>
+            <option value="audi">Ауди</option>
+          </select>
+          <br><br>
+          <input type="submit" value="Submit">
+        </form>
+
+<!--        <form action="/action_page.php">-->
+<!--          <label for="cars">Выберите автомобиль:</label>-->
+<!--          <select name="cars" id="cars">-->
+<!--            <option value="volvo">Вольво</option>-->
+<!--            <option value="saab">Сааб</option>-->
+<!--            <option value="opel">Опель</option>-->
+<!--            <option value="audi">Ауди</option>-->
+<!--          </select>-->
+<!--          <br><br>-->
+<!--          <input type="submit" value="Submit">-->
+<!--        </form>-->
+
+        <p>Нажмите кнопку "Submit", и форма данных будут отправлены на страницу на
+        сервере под названием "action_page.php".</p><br>
+
+        <h3>Use select with optgroup tags</h3>
+        <label for="cars">Выберите автомобиль:</label>
+        <select  name="cars">
+          <optgroup label="Шведские Автомобили">
+            <option value="volvo">Вольво</option>
+            <option value="saab">Сааб</option>
+          </optgroup>
+          <optgroup label="Немецкие Автомобили">
+            <option value="mercedes">Мерседес</option>
+            <option value="audi">Ауди</option>
+          </optgroup>
+        </select>
+
+<!--        <label for="cars">Выберите автомобиль:</label>-->
+<!--        <select  name="cars" id="cars">-->
+<!--          <optgroup label="Шведские Автомобили">-->
+<!--            <option value="volvo">Вольво</option>-->
+<!--            <option value="saab">Сааб</option>-->
+<!--          </optgroup>-->
+<!--          <optgroup label="Немецкие Автомобили">-->
+<!--            <option value="mercedes">Мерседес</option>-->
+<!--            <option value="audi">Ауди</option>-->
+<!--          </optgroup>-->
+<!--        </select>-->
+
+    <h1>Тег small</h1>
+        <p>Тег small тег определяет маленький текст (например, авторские
+            права и другие побочные комментарии).<br>
+            Совет: Этот тег не является устаревшим, но с помощью CSS можно добиться более богатого (или такого же) эффекта.
+        </p>
+
+        <p>Это какой-то нормальный текст.</p>
+        <p><span class="small">Это какой-то маленький текст.</span></p>
+
+    <h1>Тег source</h1>
+        <p>Тег source используется для указания нескольких медиаресурсов для медиаэлементов, таких как video, audio, и picture.
+            Тег source позволяет указать альтернативные video/audio/image файлы, которые браузер может выбрать, основываясь
+            на поддержке браузера или ширине видового экрана. Браузер выберет первый source, который он поддерживает.
+        </p>
+
+        <h3>Аудиоплеер с двумя исходными файлами. Браузер выберет первый source, который он поддерживает:</h3>
+            <audio controls>
+                <source src="horse.ogg" type="audio/ogg">
+                <source src="music/Better_Memories.mp3" type="audio/mpeg">
+            Ваш браузер не поддерживает аудио элемент.
+            </audio>
+
+            <p><strong>Примечание:</strong> Тег source не поддерживается в Internet Explorer 8 и более ранние версии.</p>
+
+        <h3>Тег video. Аудиоплеер с двумя исходными файлами. Браузер выберет первый source, который он поддерживает:</h3>
+            <video width="320" height="240" controls>
+              <source src="video/tarynnoelle_video11.mov" type="video/mp4">
+              <source src="movie.ogg" type="video/ogg">
+              Ваш браузер не поддерживает тег video.
+            </video>
+
+            <p>
+            Видео предоставлено
+            <a href="https://www.sergioartg.com" target="_blank">@sergioartg</a>.
+            </p>
+
+    <h1>Тег span</h1>
+        <p>Тег span - это встроенный контейнер, используемый для разметки части текста или части документа.
+            Тег span легко стилизовать с помощью CSS или манипулировать с помощью JavaScript с помощью class или атрибута id.
+            Тег span очень похож на элемент div, но div является элементом блочного уровня, а span является встроенным элементом.
+        </p>
+
+        <p>У моей матери <span style="color:blue;font-weight:bold">голубые</span> глаза, а у отца <span style="color:darkolivegreen;font-weight:bold">зеленые</span> глаза.</p>
+
+    <h1>Тег strong</h1>
+        <p>Тег strong используется для определения текста с высокой
+            важностью. Содержимое внутри обычно отображается жирным.<br>
+            Совет: Используйте b для указания полужирного текста без какой-либо дополнительной важности!
+        </p>
+        <p>Этот текст нормальный.</p>
+
+        <p><strong>Этот текст очень важен!</strong></p>
+
+    <h1>Тег style</h1>
+        <p>Тег style используется для определения информации о стиле (CSS) документа.
+            Внутри элемента style вы указываете, как HTML элементы должны
+            отображаться в браузере.<br>
+            Примечание: Когда браузер читает таблицу стилей, он форматирует HTML документ в
+            соответствии с информацией в таблице стилей. Если некоторые свойства были определены
+            для одного и того же селектора (элемента) в разных таблицах стилей, то будет
+            использоваться значение из последней прочитанной таблицы стилей (см. пример ниже)!<br>
+            Совет: Чтобы создать ссылку на внешнюю таблицу стилей, используйте тег link.<br>
+            Совет: Чтобы узнать больше о таблицах стилей, пожалуйста, прочтите CSS Учебник.
+        </p>
+        <h5>Это заголовок h5</h5>
+        <p>Это параграф.</p>
+
+        <p>Обратите внимание, что если некоторые свойства были определены для одного и того же селектора (элемента) в разных таблицах стилей, то будет использоваться значение из последней прочитанной таблицы стилей!</p>
+
+    <h1>Тег sub</h1>
+        <p>Тег sub определяет текст подстрочного индекса. Текст подстрочного
+            индекса появляется на полсимвола ниже обычной строки и иногда
+            отображается более мелким шрифтом. Текст подстрочного индекса может
+            быть использован для химических формул, таких как H2O.<br>
+            Совет: Используйте тег sup для определения надстрочного текста.
+        </p>
+
+        <p>Текст содержит <sub>подстрочный</sub> текст.</p>
+        <p>H <sub>2</sub>O</p>
+
+    <h1>Тег details и summary с CSS</h1>
+        <p>Тег summary определяет видимый заголовок для элемента details. По
+            заголовку можно щелкнуть, чтобы просмотреть/скрыть детали.<br>
+            Примечание: Тег summary должен быть первым дочерним элементом элемента details element.
+        </p>
+
+        <details>
+          <summary>Центр Эпкот</summary>
+          <p>Эпкот - это тематический парк на курорте Уолт Дисней с захватывающими
+              аттракционами, международными павильонами, отмеченными наградами фейерверками и сезонными специальными мероприятиями.
+          </p>
+        </details>
+
+        <p><b>Примечание:</b> Тег details не поддерживается в Edge (предыдущая версия 79).</p>
+
+    <h1>Тег sup</h1>
+
+        <p>Тег sup определяет надстрочный текст. Надстрочный текст появляется на полсимвола
+            выше обычной строки и иногда отображается более мелким шрифтом.
+            Надстрочный текст можно использовать для сносок, например
+            WWW[1].<br>
+            Совет: Используйте sub для определения подстрочного текста.
+        </p>
+        <p>Текст содержит <sup>надстрочный</sup> текст.</p>
+
+    <h1>Тег svg</h1>
+        <p>Тег svg определяет контейнер для SVG графики.
+            SVG имеет несколько методов рисования контуров, прямоугольников, кругов, текста и графических изображений.
+        </p>
+        <h3>Тег svg, круг</h3>
+            <svg width="100" height="100">
+              <circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" />
+              Извините, ваш браузер не поддерживает встроенный SVG.
+            </svg>
+
+        <h3>Тег svg, прямоугольник</h3>
+            <svg width="400" height="100">
+            <rect width="400" height="100" style="fill:rgb(0,0,255);stroke-width:10;stroke:rgb(0,0,0)" />
+            Извините, ваш браузер не поддерживает встроенный SVG.
+            </svg>
+
+        <h3>Тег svg, квадрат со скругленными углами</h3>
+            <svg width="400" height="180">
+            <rect x="50" y="20" rx="20" ry="20" width="150" height="150" style="fill:red;stroke:black;stroke-width:5;opacity:0.5" />
+            Извините, ваш браузер не поддерживает встроенный SVG.
+            </svg>
+
+        <h3>Тег svg, звезда</h3>
+            <svg width="300" height="200">
+            <polygon points="100,10 40,198 190,78 10,78 160,198"
+            style="fill:lime;stroke:purple;stroke-width:5;fill-rule:evenodd;" />
+            Извините, ваш браузер не поддерживает встроенный SVG.
+            </svg>
+
+        <h3>Тег svg, логотип</h3>
+            <svg height="130" width="500">
+              <defs>
+                <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" style="stop-color:rgb(255,255,0);stop-opacity:1" />
+                  <stop offset="100%" style="stop-color:rgb(255,0,0);stop-opacity:1" />
+                </linearGradient>
+              </defs>
+
+              <ellipse cx="100" cy="70" rx="85" ry="55" fill="url(#grad1)" />
+
+              <text fill="#ffffff" font-size="45" font-family="Verdana" x="50" y="86">SVG</text>
+              Извините, ваш браузер не поддерживает встроенный SVG.
+            </svg>
+    <h1>Тег table</h1>
+        <p>Тег table определяет HTML таблицу. HTML таблица состоит из одного элемента table и одного или нескольких элементов tr, th, и td.
+            Тег tr определяет строку таблицы, элемент th определяет заголовок таблицы, а элемент td определяет ячейку таблицы.
+            HTML таблица также может включать в себя элементы caption, colgroup, thead, tfoot, и tbody.
+        </p>
+        <h3>Как добавить свернутые границы в таблице (с помощью CSS):</h3>
+            <table>
+              <tr>
+                <th>Месяц</th>
+                <th>Сбережения</th>
+              </tr>
+              <tr>
+                <td>Январь</td>
+                <td>$100</td>
+              </tr>
+              <tr>
+                <td>Февраль</td>
+                <td>$80</td>
+              </tr>
+            </table><br>
+
+        <H3>Как выровнять таблицу по правому краю (с помощью CSS):</H3>
+            <table style="float:right">
+              <tr>
+                <th>Месяц</th>
+                <th>Сбережения</th>
+              </tr>
+              <tr>
+                <td>Январь</td>
+                <td>$100</td>
+              </tr>
+              <tr>
+                <td>Февраль</td>
+                <td>$80</td>
+              </tr>
+            </table>
+            <p>Это какой-то текст будет обернутым вокруг таблицы. Это какой-то текст будет
+                обернутым вокруг таблицы. Это какой-то текст будет обернутым вокруг таблицы.
+            </p>
+
+        <h3>Как выровнять таблицу по центру (с помощью CSS):</h3>
+
+            <p>Чтобы центрировать таблицу, установите левое и правое поля в положение авто:</p>
+
+            <table class="center">
+              <tr>
+                <th>Месяц</th>
+                <th>Сбережения</th>
+              </tr>
+              <tr>
+                <td>Январь</td>
+                <td>$100</td>
+              </tr>
+              <tr>
+                <td>Февраль</td>
+                <td>$80</td>
+              </tr>
+            </table>
+
+        <h3>Как добавить цвет фона в таблицу (с помощью CSS):</h3>
+
+            <table style="background-color:#00FF00">
+              <tr>
+                <th>Месяц</th>
+                <th>Сбережения</th>
+              </tr>
+              <tr>
+                <td>Январь</td>
+                <td>$100</td>
+              </tr>
+              <tr>
+                <td>Февраль</td>
+                <td>$80</td>
+              </tr>
+            </table>
+
+
+        <h3>Как добавить заполнение в таблицу (с помощью CSS):</h3>
+
+            <table>
+              <tr>
+                <th>Месяц</th>
+                <th>Сбережения</th>
+              </tr>
+              <tr>
+                <td>Январь</td>
+                <td>$100</td>
+              </tr>
+              <tr>
+            <td>Февраль</td>
+            <td>$80</td>
+            </tr>
+            </table>
+
+        <h3>Добавить заголовок к таблице.</h3>
+
+            <h4>Горизонтальные заголовки:</h4>
+            <table class="center">
+              <tr>
+                <th>Имя</th>
+                <th>Телефон</th>
+              </tr>
+              <tr>
+                <td>Билл Гейтс</td>
+                <td>555 77 854</td>
+              </tr>
+            </table>
+
+            <h4>Вертикальные заголовки:</h4>
+            <table class="center">
+              <tr>
+                <th>Имя:</th>
+                <td>Билл Гейтс</td>
+              </tr>
+              <tr>
+                <th>Телефон:</th>
+                <td>555 77 854</td>
+              </tr>
+            </table>
+
+        <h3>Тег caption. Как создать таблицу с подписью: </h3>
+
+        <table>
+          <caption>Ежемесячные сбережения</caption>
+          <tr>
+            <th>Месяц</th>
+            <th>Сбережения</th>
+          </tr>
+          <tr>
+            <td>Январь</td>
+            <td>$100</td>
+          </tr>
+        </table>
+
+        <h3>Как определить ячейки таблицы, которые охватывают более одной строки или одного столбца:</h3>
+
+        <table>
+          <tr>
+            <th>Имя</th>
+            <th>Email</th>
+            <th colspan="2">Телефон</th>
+          </tr>
+          <tr>
+            <td>Андрей Щипунов</td>
+            <td>and-shhipunov@example.com</td>
+            <td>123-45-678</td>
+            <td>212-00-546</td>
+          </tr>
+        </table>
+
+    <h1>Тег tbody</h1>
+        <p>Тег tbody используется для группировки содержимого тела в HTML таблице.
+            Тег tbody используется в сочетании с элементами thead и tfoot для указания каждой
+            части таблицы (тело, верхний и нижний колонтитулы).
+            Браузеры могут использовать эти элементы для включения прокрутки тела таблицы независимо
+            от верхнего и нижнего колонтитулов. Кроме того, при печати большой таблицы, охватывающей
+            несколько страниц, эти элементы могут позволить печатать верхний и нижний колонтитулы таблицы в
+            верхней и нижней частях каждой страницы.<br>
+            Примечание: Тег tbody должен иметь внутри один или несколько тегов tr.<br>
+            Тег tbody должен использоваться в следующем контексте: Как дочерний элемент
+            элемента table, после элементов caption, colgroup, и thead.<br>
+            Совет: Элементы thead, tbody, и tfoot по умолчанию не влияют на макет таблицы.
+            Однако вы можете использовать CSS для стилизации этих элементов (см. пример ниже)!
+        </p>
+
+        <h3>Стиль thead, tbody, и tfoot с CSS:</h3>
+            <table>
+              <thead>
+              <tr>
+                 <th>Месяц</th>
+                 <th>Сбережения</th>
+              </tr>
+              </thead>
+              <tfoot>
+              <tr>
+                  <td>Сумма</td>
+                  <td>$180</td>
+              </tr>
+              </tfoot>
+              <tbody>
+              <tr>
+                 <td>Январь</td>
+                 <td>$100</td>
+              </tr>
+              <tr>
+                  <td>Февраль</td>
+                  <td>$80</td>
+              </tr>
+              </tbody>
+            </table>
+
+            <p><b>Совет:</b> Элементы thead, tbody и tfoot по умолчанию не влияют на макет
+                таблицы. Однако вы можете использовать CSS для стиля этих элементов.</p>
+
+        <h3>Как выровнять содержимое внутри tbody (с помощью CSS):</h3>
+
+            <table style="width:100%">
+              <thead>
+                <tr>
+                  <th>Месяц</th>
+                  <th>Сбережения</th>
+                </tr>
+              </thead>
+              <tbody style="text-align:right">
+                <tr>
+                  <td>Январь</td>
+                  <td>$100</td>
+                </tr>
+                <tr>
+                  <td>Февраль</td>
+                  <td>$80</td>
+                </tr>
+              </tbody>
+            </table>
+        <h3>Как выровнять содержимое по вертикали внутри tbody (с помощью CSS):</h3>
+
+            <table style="width:50%;">
+                <tr>
+                  <th>Месяц</th>
+                  <th>Сбережения</th>
+                </tr>
+              <tbody style="vertical-align:bottom">
+                <tr style="height:100px">
+                  <td>Январь</td>
+                  <td>$100</td>
+                </tr>
+                <tr style="height:100px">
+                  <td>Февраль</td>
+                  <td>$80</td>
+                </tr>
+              </tbody>
+            </table>
+
+    <h1>Выравнивание таблицы по правому краю</h1>
+    <p>Тег td определяет стандартную ячейку данных в HTML таблице.<br>
+        Таблица HTML имеет два типа ячеек:<br>
+        - Заголовок ячейки - содержит информацию заголовка (создается с
+        помощью элемента th)<br>
+        - Данные ячейки - содержат данные (созданные с помощью элемента td)<br>
+        Текст в элементе td по умолчанию являются регулярными и выровненны по левому краю.<br>
+        Текст в элементе th по умолчанию выделены жирным шрифтом и выровненны по центру.
+    </p>
+
+        <h3>Как выровнять таблицу по правому краю (с помощью CSS):</h3>
+        <table style="float:right">
+          <tr>
+            <th>Месяц</th>
+            <th>Сбережения</th>
+          </tr>
+          <tr>
+            <td>Январь</td>
+            <td>$100</td>
+          </tr>
+          <tr>
+            <td>Февраль</td>
+            <td>$80</td>
+          </tr>
+        </table>
+        <p>Это какой-то текст будет обернутым вокруг таблицы. Это какой-то текст будет
+            обернутым вокруг таблицы. Это какой-то текст будет обернутым вокруг таблицы.</p>
+
+        <h3>Как добавить цвет фона в таблицу (с помощью CSS):</h3>
+
+            <table style="background-color:#00FF00">
+              <tr>
+                <th>Месяц</th>
+                <th>Сбережения</th>
+              </tr>
+              <tr>
+                <td>Январь</td>
+                <td>$100</td>
+              </tr>
+              <tr>
+                <td>Февраль</td>
+                <td>$80</td>
+              </tr>
+            </table>
+
+        <h3>Тег td атрибут height с CSS</h3>
+
+            <p>Как установить высоту ячейки таблицы (с помощью CSS):</p>
+
+            <table>
+              <tr>
+                <th>Месяц</th>
+                <th>Сбережения</th>
+              </tr>
+              <tr>
+                <td style="height:100px">Январь</td>
+                <td style="height:100px">$100</td>
+              </tr>
+              <tr>
+                <td>Февраль</td>
+                <td>$80</td>
+              </tr>
+            </table>
+
+        <h3>Как указать отсутствие переноса слов в ячейке таблицы (с помощью CSS):</h3>
+
+            <p>Добавить без переноса в td</p>
+
+            <table>
+              <tr>
+                <th>Стих</th>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">Никогда не увеличивайте, сверх того, что необходимо, количество сущностей, необходимых для объяснения чего-либо</td>
+              </tr>
+            </table>
+
+        <h3>Как выровнять содержимое по вертикали внутри <td> (с помощью CSS):</h3>
+
+            <p>Вертикальное выравнивание содержимого в td</p>
+
+            <table style="width:50%;">
+              <tr>
+                <th>Месяц</th>
+                <th>Сбережения</th>
+              </tr>
+              <tr style="height:100px">
+                <td style="vertical-align:bottom">Январь</td>
+                <td style="vertical-align:bottom">$100</td>
+              </tr>
+            </table>
+
+        <h3>Как установить ширину таблицы (с помощью CSS):</h3>
+
+            <table style="width:400px">
+              <tr>
+                <th>Месяц</th>
+                <th>Сбережения</th>
+              </tr>
+              <tr>
+                <td>Январь</td>
+                <td>$100</td>
+              </tr>
+              <tr>
+                <td>Февраль</td>
+                <td>$80</td>
+              </tr>
+            </table>
+
+        <h3>Добавить заголовок к таблице</h3>
+
+            <h4>Горизонтальные заголовки:</h4>
+            <table>
+              <tr>
+                <th>Имя</th>
+                <th>Телефон</th>
+              </tr>
+              <tr>
+                <td>Билл Гейтс</td>
+                <td>555 77 854</td>
+              </tr>
+            </table>
+
+            <h4>Вертикальные заголовки:</h4>
+            <table>
+              <tr>
+                <th>Имя:</th>
+                <td>Билл Гейтс</td>
+              </tr>
+              <tr>
+                <th>Телефон:</th>
+                <td>555 77 854</td>
+              </tr>
+            </table>
+
+        <h3>Тег caption. Как создать таблицу с подписью:</h3>
+
+            <table>
+              <caption>Ежемесячные сбережения</caption>
+              <tr>
+                <th>Месяц</th>
+                <th>Сбережения</th>
+              </tr>
+              <tr>
+                <td>Январь</td>
+                <td>$100</td>
+              </tr>
+            </table>
+
+        <h3>Как определить ячейки таблицы, которые охватывают более одной строки или одного столбца:</h3>
+
+            <table>
+              <tr>
+                <th>Имя</th>
+                <th>Email</th>
+                <th colspan="2">Телефон</th>
+              </tr>
+              <tr>
+                <td>Андрей Щипунов</td>
+                <td>and-shhipunov@example.com</td>
+                <td>123-45-678</td>
+                <td>212-00-546</td>
+              </tr>
+            </table>
+
+    <h1>Тег template</h1>
+        <p>Тег template используется в качестве контейнера для хранения некоторого
+            HTML контента, скрытого от пользователя при загрузке страницы.
+            Содержимое внутри template визуализируется позже с помощью JavaScript.
+            Вы можете использовать тег template, если у вас есть какой-то HTML код,
+            который вы хотите использовать снова и снова, но не раньше, чем вы попросите
+            об этом. Сделать это без тега template, вы должны создать HTML код с помощью
+            JavaScript, чтобы предотвратить визуализацию кода браузером.
+        </p>
+
+        <h3>Тег template со скриптом. Используйте template для хранения
+            некоторого содержимого, которое будет скрыто при загрузке страницы.
+            Используйте JavaScript для его отображения:</h3>
+
+            <p>Нажмите кнопку, чтобы получить содержимое из шаблона и отобразить его на веб-странице.</p>
+
+            <button onclick="showContent()">Показать скрытый контент</button>
+
+            <template>
+              <h3>Цветок</h3>
+              <img src="pictures/flowers_marguerite.jpg" width="500" height="325">
+            </template>
+
+            <script>
+            function showContent() {
+              var temp = document.getElementsByTagName("template")[0];
+              var clon = temp.content.cloneNode(true);
+              document.body.appendChild(clon);
+            }
+            </script>
+
+        <h3>Тег template содержимое. Заполните веб страницу одним новым
+            элементом div для каждого элемента в массиве. HTML код каждого
+            элемента div находится внутри элемента template:</h3>
+
+            <p>Нажмите кнопку, чтобы заполнить веб-страницу одним новым элементом DIV для каждого элемента массива.</p>
+
+            <p>HTML код, каждого элемента DIV находится в элементе шаблона.</p>
+
+            <button onclick="showContent_2()">Показать содержимое</button>
+
+            <template>
+              <div class="myClass">Мне нравится:</div>
+            </template>
+
+            <script>
+            var myArr = ["Ауди", "БМВ", "Форд", "Хонда", "Ягуар", "Ниссан"];
+
+            function showContent_2() {
+              var temp_2, item_2, a_2, i_2;
+              //получить элемент шаблона :
+              temp_2 = document.getElementsByTagName("template")[0];
+              //получить элемент DIV из шаблона:
+              item_2 = temp_2.content.querySelector("div");
+              //для каждого элемента массива:
+              for (i_2 = 0; i_2 < myArr.length; i_2++) {
+                //Создание нового узла на основе шаблона:
+                a_2 = document.importNode(item_2, true);
+                //добавление данных из массива:
+                a_2.textContent += myArr[i_2];
+                //добавьте новый узел, где вам нравится:
+                document.body.appendChild(a_2);
+              }
+            }
+            </script>
+
+        <h3>Тег textarea поддержка</h3>
+
+        <p>Тест, чтобы увидеть, если браузер поддерживает шаблон элемента:</p>
+
+        <script>
+        if (document.createElement("template").content) {
+          document.write("Да! Браузер поддерживает элемент template");
+          /*Код для браузеров, поддерживающих элемент TEMPLATE*/
+        } else {
+          document.write("Нет! Браузер не поддерживает элемент template ");
+          /*Альтернативный код для браузеров, не поддерживающих элемент TEMPLATE*/
+        }
+        </script>
+
+    <h1>Тег textarea</h1>
+        <p>Тег textarea определяет многострочный элемент управления вводом текста.
+            Тег textarea часто используется в форме для сбора пользовательских данных, таких как комментарии или отзывы.
+            Текстовая область может содержать неограниченное количество символов, и текст отображается шрифтом фиксированной ширины (обычно Courier).
+            Размер текстовой области определяется атрибутами cols и rows или (с помощью CSS).
+            Атрибут name необходим для ссылки на данные формы после отправки формы (если вы пропустите атрибут name, данные из текстовой области не будут представлены).
+            Атрибут id необходим для связывания текстовой области с меткой.<br>
+            Совет: Всегда добавляйте тег label для лучших практик доступности!
+        </p>
+
+        <h3>Многострочный элемент управления вводом текста (текстовая область):</h3>
+            <label>Комментарий от Bob:</label><br>
+
+            <textarea  name="w3review" rows="4" cols="50">
+                Генерация уникального контента.
+                Генерация – процесс, позволяющий
+                получить из одной статьи несколько близких по
+                смыслу экземпляров. Размножить и получить сотни, тысячи псевдоуникальных
+                текстов можно через онлайн-сервисы или программы-генераторы.
+            </textarea>
+
+        <h3>Отключить опцию изменения размера по умолчанию:</h3>
+            <label for="w3review">Обзор Python:</label><br>
+
+            <textarea id="w3review" name="w3review" rows="4" cols="50">
+                Python is powerful... and fast;
+                plays well with others;
+                runs everywhere;
+                is friendly & easy to learn;
+                is Open.
+            </textarea>
+
+    <h1>Тег tfoot</h1>
+        <p>Тег tfoot используется для группировки содержимого нижнего колонтитула в HTML таблице.
+            Тег tfoot используется в сочетании с элементами thead и tbody для указания каждой части таблицы (нижний колонтитул, верхний колонтитул, тело)
+            Браузеры могут использовать эти элементы для включения прокрутки тела таблицы независимо от верхнего и нижнего колонтитулов. Кроме того, при печати большой таблицы, охватывающей
+            несколько страниц, эти элементы могут позволить печатать верхний и нижний
+            колонтитулы таблицы в верхней и нижней частях каждой страницы.<br>
+            Примечание: Тег tfoot должен иметь один или несколько тегов внутри tr.
+            Тег tfoot должен использоваться в следующем контексте: Как ребенок элемента table,
+            после любого элемента caption, colgroup, thead, и tbody.<br>
+            Совет: Элеметы thead, tbody, и tfoot по умолчанию не влияют на макет таблицы.
+            Однако вы можете использовать CSS для стилизации этих элементов (см. пример ниже)!
+        </p>
+
+    <h1>Тег th</h1>
+        <p>ег th определяет ячейку заголовка в HTML таблице.
+            HTML таблица имеет два вида ячеек:<br>
+            - Ячейки заголовка - содержит информацию заголовка (создается с
+            помощью элемента th)<br>
+            - Ячейки данных - содержат данные (созданные с помощью элемента
+            td)<br>
+            Текст в элементах th по умолчанию выделены жирным шрифтом и выровненными по центру.<br>
+            Текст в элементах td по умолчанию являются регулярными и выровненными по левому краю.
+        </p>
+
+    <h1>Тег thead</h1>
+        <p>Тег thead используется для группировки содержимого заголовка в HTML таблице.
+
+        Тег thead используется в сочетании с элементами tbody и tfoot для
+            указания каждой части таблицы (header, body, footer).
+            Браузеры могут использовать эти элементы для включения прокрутки тела таблицы
+            независимо от верхнего и нижнего колонтитулов. Кроме того, при печати большой
+            таблицы, охватывающей несколько страниц, эти элементы могут позволить печатать
+            верхний и нижний колонтитулы таблицы в верхней и нижней частях каждой
+            страницы.<br>
+            Примечание: Тег thead должен иметь один или несколько тегов tr внутри.
+            Тег thead должен использоваться в следующем контексте: Как ребенок элемент
+            table, после любого элемента caption и colgroup, и перед любым элементом
+            tbody, tfoot, и tr.<br>
+            Совет: Элементы thead, tbody, и tfoot по умолчанию не влияют на макет таблицы.
+            Однако вы можете использовать CSS для стилизации этих элементов (см. пример ниже)!
+        </p>
+
+    <h1>Тег time</h1>
+        <p>Тег time определяет определенное время (или дату время).
+            Атрибут datetime этого элемента используется для перевода времени в машиночитаемый формат,
+            чтобы браузеры могли предлагать добавлять напоминания о дате через календарь пользователя,
+            а поисковые системы могли выдавать более умные результаты поиска.
+        </p>
+
+        <p>Мы открываемся с <time>10:00</time> до <time>21:00</time> каждый день.</p>
+
+        <p>У меня назначено свидание <time datetime="2008-02-14 20:00">в день святого Валентина</time>.</p>
+
+        <p><b>Примечание:</b> Элемент time не отображается как что-то особенное ни в одном из основных браузеров.</p>
+
+        <p><strong>Примечание:</strong> Тег time не поддерживается в Internet Explorer 8 и более ранние версии.</p>
+
+    <h1>Тег title</h1>
+        <p>Тег title определяет заголовок документа. Заголовок должен быть только
+            текстовым и отображаться в строке заголовка браузера или на вкладке
+            страницы.<br>
+            Тег title необходим в HTML документах!<br>
+            Содержание заголовка страницы очень важно для поисковой оптимизации (SEO)! Заголовок страницы используется
+            алгоритмами поисковых систем для определения порядка размещения страниц в результатах поиска.<br>
+            Тег title:<br>
+            - определяет заголовок на панели инструментов браузера<br>
+            - предоставляет заголовок страницы при ее добавлении в избранное<br>
+            - отображение заголовка страницы в результатах поиска Вот несколько<br>
+            советов по созданию хороших названий:<br>
+            - Переходите к более длинному описательному заголовку (избегайте одно или
+            двухсловных заголовков)
+            - Поисковые системы будут отображать около 50-60 символов заголовка,
+            поэтому старайтесь не иметь заголовков длиннее этого
+            - Не используйте только список слов в качестве заголовка (это может
+            уменьшить позицию страницы в результатах поиска)<br>
+            Итак, постарайтесь сделать название как можно более точным и осмысленным!<br>
+            Примечание: Вы не можете иметь больше одного элемента title в HTML документе.
+        </p>
+
+    <h1>Тег tr</h1>
+        <p>Тег tr определяет строку в HTML таблице.
+
+        Тег tr содержит один или несколько элементов th или td.
+        </p>
+
+    <h1>Тег track</h1>
+    <p>Тег track определяет текстовые дорожки для элементов audio или video.
+        Этот элемент используется для указания субтитров, файлов субтитров или других файлов,
+        содержащих текст, которые должны быть видны во время воспроизведения носителя.
+        Треки форматируются в формате WebVTT (файлы.vtt).
+    </p>
+        <video width="320" height="240" controls>
+            <source src="forrest_gump.mp4" type="video/mp4">
+            <source src="forrest_gump.ogg" type="video/ogg">
+        <track src="fgsubtitles_en.vtt" kind="subtitles" srclang="en" label="Английский">
+        <track src="fgsubtitles_no.vtt" kind="subtitles" srclang="no" label="Норвежский">
+        </video>
+
+    <h1>Тег u с CSS</h1>
+        <p>Тег u представляет собой некоторый текст, который не артикулирован и стилизован иначе,
+            чем обычный текст, например слова с ошибками или имена собственные в китайском тексте.
+            Содержимое внутри обычно отображается с подчеркиванием. Вы можете
+            изменить с CSS (см. пример ниже).<br>
+            Совет: Избегайте использования элемента u, его можно спутать с гиперссылкой!
+        </p>
+        <p>Это какой-то <u class="spelling-error">mispeled</u> текст.</p>
+
+    <h1> Тег ul</h1>
+    <p>Тег ul определяет неупорядоченный (маркированный) список.
+        Используйте тег ul вместе с тегом li, что позволяет создавать
+        неупорядоченные списки.<br>
+        Совет: Используйте CSS для стиля списков.<br>
+        Совет: Для упорядоченных списков используйте тег ol.</p>
+
+    <h1>Тег var</h1>
+        <p>Тег var используется для определения переменной в программировании или в математическом выражении.
+            Содержимое внутри обычно отображается italic.<br>
+            Совет: Этот тег не является устаревшим. Однако можно добиться более эффективного с помощью CSS.
+        </p>
+        <p>Площадь треугольника равна: 1/2 x <var>b</var> x <var>h</var>, где <var>b</var> является базой, а <var>h</var> это вертикальная высота.</p>
+
+    <h1>Тег video</h1>
+        <p>Тег video используется для встраивания видеоконтента в документ, например
+            видеоклип или другие видеопотоки.<br>
+            Тег video содержит один или несколько тегов source с различными источниками видео.
+            Браузер выберет первый источник, который он поддерживает.<br>
+            Текст между тегами video и /video будут отображаться только в
+            браузерах,которые не поддерживают элемент video.<br>
+            Существует три поддерживаемых видеоформата в HTML: MP4, WebM, и OGG.
+        </p>
+
+    <h1>Тег wbr</h1>
+        <p>Тег wbr (Word Break Opportunity) указывает, где в тексте можно
+            было бы добавить разрыв строки.<br>
+            Совет: Когда слово слишком длинное, браузер может сломать его в неправильном месте.
+            Вы можете использовать элемент wbr, чтобы добавить возможность разрыва слов.
+        </p>
+
+        <p>Попробуйте уменьшить окно браузера, чтобы посмотреть, как очень длинное слово пункт ниже будет нарушен:</p>
+
+        <p>Это оченьоченьоченьоченьоченьоченьоченьоченьоченьоченьоченьоченьоченьоченьоченьоченьоченьоченьоченьоченьоченьоченьоченьочень<wbr>длинноеслово,котороеразобьетсянаконкретные<wbr>местаизмененияразмераокнабраузера.</p>
+
+        <p><b>Примечание:</b> Элемент wbr не поддерживается в Internet Explorer 11 и более ранних версиях.</p>
+
+</body>
+</html>
